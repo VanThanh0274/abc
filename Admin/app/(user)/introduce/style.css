@@ -1,0 +1,195 @@
+.menuintro{
+    display: flex;
+    padding: 20px;
+}
+.menuintro div{
+    margin-top: 10px;
+}
+.menuintro p{
+    font-family: Play, sans-serif;
+    font-size: 20px;
+    padding: 0px;
+    margin-left: 20px;
+    font-weight: 0;
+    color: rgb(1, 1, 1);;
+    
+}
+.app{
+    width: 70%;
+    margin: 10px auto;
+}
+.div-img{
+    width: 100%;
+}
+.gioithieu1{
+    position: relative;
+}
+h3{
+    font-family: "Playfair Display", serif;
+    color: #000;
+}
+#bold{
+    position: absolute;
+    top: -15%;
+    right: 18%;
+    font-size: 150px;
+}
+#likeyou{
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-weight:100;
+    font-size: 100px;
+    
+}
+.videogioithieu{
+    width: 100%;
+}
+.aDreamof{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.aDreamof-center{
+    width: 80%;
+    display: flex;
+}
+.aDreamof-right{
+    width: 60%;
+    font-size: 20px;
+    padding: 30px 5px;
+    font-family: Roboto, sans-serif;
+    line-height: 1.9;
+    text-align: justify;
+}
+.aDreamof-left{
+    width: 40%;
+    position: relative;
+}
+.adream1{
+    font-size: 69px;
+    font-weight: 100;
+}
+.adream2{
+    font-size: 130px;
+    font-weight: bold;
+    position: absolute;
+    top: -6%;
+    left: 10%;
+}
+.gioithieuimgcenter img{
+    padding: 10px;
+}
+
+
+.brandworld{
+    background-color: #F6F6F6;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.brandworld-center{
+    width: 70%;
+}
+.brandworlds{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.brand{
+    justify-content:space-evenly;
+}
+.idol{
+    /* justify-content: center; */
+}
+.Presence{
+    width: 50%;
+    position: relative;
+}
+.Presence h3{
+    font-family: "Playfair Display", serif;;
+}
+.Presence .huy1{
+    position: absolute;
+    top: 0%;
+    left: 7%;
+    font-weight: 100;
+}
+.Presence .huy2{
+    position: absolute;
+    top: -10%;
+    left: 15%;
+    font-weight: bold;
+}
+.Presence .huy3{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    font-weight: 100;
+}
+
+
+.Presence-img{
+    width: 50%;
+}
+.Presence-img img{
+    width: 100%;
+}
+
+.brandworlds-right{
+    width: 40%;
+    line-height: 1.7;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;;
+    
+}
+.brandworlds-left{
+    width: 20%;
+    position: relative;
+    height: 300px;
+}
+.brandworlds-left .huy1{
+    font-size: 120px;
+    position: absolute;
+    top: -25%;
+
+}
+.brandworlds-left .huy2{
+    font-size: 60px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+
+}
+.brandworlds-left .huy3{
+    font-size: 20px;
+    position: absolute;
+    top: 70%;
+    left: 30%;
+
+}
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #F0EFEF;
+    padding: 100px 0px;
+    position:relative;
+}
+.footer img{
+    width: 80%;
+}
+.footerabs{
+    position: absolute;
+    top: 3%
+}
+.footer a{
+    font-family: Roboto, sans-serif;
+    color: rgb(166, 166, 166);
+    text-decoration: none;
+    padding-left: 60px;
+    font-size: 20px;
+}

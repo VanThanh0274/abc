@@ -1,0 +1,125 @@
+.menu{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.menu a{
+    text-decoration: none;
+    color: #000;
+}
+.menu_ul{
+    position: relative;
+    z-index: 1000
+}
+/* sửa code menu con */
+.menu-row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0px;
+    position: relative;
+}
+.menu-row1 img{
+    width: 200px;
+    height: auto;
+    
+}
+.menu-left{
+    padding-left: 90px;
+    width: 500px;
+    
+}
+
+.menu-right {
+    display: flex;
+    
+    margin-right: 4cm;
+
+}
+.menu-row2{
+    display: flex;
+    justify-content: center;
+    background-color: #F6F6F7;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.menu-row2 ul {  
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    background-color: #F6F6F7;
+}
+.menu_ul li{
+    float: left;
+    padding: 20px;
+    font-size: 15px;
+    
+    position: relative;
+    
+    
+}
+.menu_ul>li{
+    border-right: 3px solid #FFFFFF;
+    
+    
+}
+.menu_ul>li>a{
+    
+}
+.menu_ul li a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+
+}
+.menu ul li a:hover{
+    color: rgb(58, 58, 219);
+}
+
+
+.menu-right i:hover{
+    cursor: pointer;
+}
+.menu-right i{
+    margin-right: 10px;
+}
+
+.menu-right a{
+    padding: 10px;
+}
+.menucon{
+    display: none;
+    position: absolute;
+    top: 50px;
+    background-color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+
+}
+.menucon li a{
+    font-size: 15px;
+    color: rgb(116, 107, 107);
+}
+#idgongkinh:hover .menucon{
+    display: block;
+}
+.icon-giohang{
+    position: relative;
+}
+.icon-giohang a{
+    
+}
+.totalcart{
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #f59555;
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 10px;
+    color: #fff;
+    font-weight: bold;
+}

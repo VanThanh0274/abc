@@ -1,0 +1,332 @@
+
+.QL-right-product button{
+    width: auto;
+    padding: 7px;
+    border-radius: 15px;
+    border: 0px 
+}
+.app{
+    display: flex;
+    position: relative;
+    
+}
+.menu {
+    background-color: #FFFFFF;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    font-size: 18px;
+    
+    
+}
+.brand{
+    width: 200px;
+    margin: 20px 0px;
+}
+.brand img {
+    width: 100%;
+    
+}
+
+.chucnang ul {
+    list-style: none;
+    padding: 20px 20px;
+    /* margin */
+}
+.chucnang a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+}
+.chucnang ul li {
+    padding-bottom: 20px;
+    font-family:sans-serif;
+    
+}
+.chucnang a:hover {
+    border: 1px solid #706a6a;
+
+}
+.QL-right-product {
+
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    padding-bottom: 100px;
+    
+}
+.ql-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.ql-top h1{
+    margin-left: 10px;
+}
+
+.ql-main {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 9px;
+}
+
+
+#frm{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 1000px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+.frm-nd{
+    background-color: #FFFFFF;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    display: flex;
+    justify-content:space-around;
+
+}
+.frm-nd table td{
+    padding: 10px;
+
+}
+.table-themsp input{
+    width: 350px;
+    height: 0.8cm;
+    
+}
+.table-themsp{
+    border-collapse: collapse;
+}
+.table-themsp tr{
+    position: relative;
+}
+.table-themsp td:nth-child(2){
+    width: 70%;
+}
+.btnadd{
+    background-color: #3498DB;
+    color: #FFFFFF;
+    border: 0px;
+    font-size: 15px;
+}
+#close{
+    width: 0.8cm;
+    height: 0.8cm;
+    border: 1px solid #888;
+    padding: 5px;
+    border-radius: 15px;
+
+}
+.table-themsp p{
+    color: red;
+    display: none;
+    font-size: 12px;
+    position: absolute;
+    top: 90%;
+}
+
+
+#btnsave{
+   background-color: #3498DB;
+    width: 100px;
+    padding: 10px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0px 
+}
+#btnsave i{
+    margin-right: 10px;
+}
+.table-list-item{
+    width: 70px;
+}
+.table-list-item img{
+    width: 100%;
+}
+
+
+.ql-main #input-tk{
+    width: 400px;
+    height: 45px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-right: 25px;
+}
+.ql-main select {
+    width: 200px;
+    height: 45px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-right: 25px;
+}
+.btn-loc{
+    width: 50px;
+    height: 40px;
+    margin-top: 2px;
+}
+.list-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.list-page1 {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+}
+
+.list-page1 li {
+    background: linear-gradient(145deg, #e6e6e6, #ffffff); /* Hiệu ứng gradient nhẹ */
+    color: #666;
+    width: 40px; /* Chiều rộng cố định */
+    height: 40px; /* Chiều cao cố định */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Làm tròn hoàn toàn */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; /* Đổ bóng nổi */
+}
+
+.list-page1 li:hover {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    color: #007bff;
+    box-shadow: 2px 2px 5px #bebebe, -2px -2px 5px #ffffff; /* Đổ bóng chìm hơn */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.list-page1 li.active {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: #fff;
+    box-shadow: inset 2px 2px 5px #0056b3, inset -2px -2px 5px #009fff; /* Đổ bóng lõm */
+}
+
+
+
+.form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.product-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.input-img input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.input-img img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-actionss {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.modal-actionss button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-actionss button:first-child {
+  background-color: #2563eb;
+  color: white;
+}
+
+.modal-actionss button:last-child {
+  background-color: rgb(238, 53, 53);
+  color: white;
+}
+
+
+
+.input-product{
+    border: 1px solid #ccc;
+}
+
+
+
+.input-error {
+  border: 1px solid red;
+      
+}
+

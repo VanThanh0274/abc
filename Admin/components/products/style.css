@@ -1,0 +1,101 @@
+.chitiet{
+    display: flex;
+    justify-content: center;
+    background-color: #ECF0FE;
+    padding: 50px 0px;
+
+}
+.chitiet-trai{
+    width: 652px;
+
+}
+.chitiet-trai-img{
+    width: 650px;
+   
+}
+.chitiet-trai-img img {
+    width: 100%;
+    height: 665px;
+    object-fit: cover;
+}
+
+.chitiet-trai-img-21 {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+.chitiet-trai-img-21 img {
+    width: 145px;
+    height: 145px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.chitiet-phai{
+    width: 30%;
+    margin-left: 25px;
+    position: relative;
+    font-family: 'Poppins', sans-serif !important;
+}
+.ghim-gia-dathang{
+ 
+}
+.button-soluong button{
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+}
+.button-soluong input{
+    width: 40px;
+    height: 35px;
+    padding: 0px;
+    align-items: center;
+    text-align: center;
+}
+.button-soluong{
+    float: left;
+}
+.Themgiohang{
+    background-color: #4872FA;
+    width: 200px;
+    height: 38px;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+}
+.Themgiohang button{
+    background-color: #4872FA;
+    margin-top: 10px;
+    border: 0px solid;
+    color: #ECF0FE;
+}
+.Lienhe{
+    clear: both;
+    background-color: #FA7A13;
+    text-align: center ;
+    color: #ECF0FE;
+    width: 270px;
+    padding: 10px;
+    
+}
+
+.dong-1{
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+
+    font-size: 15px;
+    
+}
+.dong-1-nd{
+    width: 70%;
+    margin: 23px 0px;
+}
+.dong-1-nd a{
+    text-decoration: none;
+    color: #7e7a7a;
+    font-size: 15px;
+}
+
+.motasanpham li{
+    padding: 10px;
+}

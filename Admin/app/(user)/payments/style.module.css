@@ -1,0 +1,100 @@
+.thanhtoanLeft h3{
+    font-weight: 700;
+    font-size: 20px;
+    font-family:'Segoe UI', sans-serif;
+}
+.app{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+}
+.thanhtoan{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+.thanhtoanLeft{
+    width: 600px;
+    padding-right: 50px;
+}
+.thanhtoanInput{
+    display: grid;
+    margin-bottom: 15px;
+}
+.thanhtoanInput input, .thanhtoanInput textarea{
+    border-radius: 3px;
+    border: 0.5px solid lightgray;
+}
+.thanhtoanInput input{
+    height: 38px;
+    padding: 10px;
+}
+
+
+
+.thanhtoanRight {
+    border: 2px solid #4872FA;
+    border-radius: 5px;
+    padding: 20px;
+    width: 500px; /* Đảm bảo kích thước cố định */
+    background-color: #f9f9f9; /* Màu nền nhẹ để nổi bật */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+.thanhtoanRight h3 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.tables {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tables thead th {
+    text-align: left;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tables tbody tr td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.tables tbody tr:last-child td {
+    font-weight: bold;
+    color: darkblue;
+    border-bottom: 2px solid #ccc;
+}
+
+
+
+.btnThanhtoan {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e97730;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnThanhtoan:hover {
+    background-color: #C74E04;
+    transition: 0.3s;
+}
+
+.thanhtoan-right p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,75 @@
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.dll
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.dll
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.pdb
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.Up2Date
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.dll
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Năm Ba\Call API\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.dll
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.dll
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.pdb
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.dll
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\Năm Ba\Call API\apikinhmat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.dll
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.pdb
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\PC\Downloads\Hkhanh\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.dll
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.pdb
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.dll
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.pdb
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.Up2Date
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.dll
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.pdb
+D:\KinhMatHuy\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\ref\DAL.dll
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.dll
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\DAL.pdb
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.dll
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\bin\Debug\net6.0\Model.pdb
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.csproj.Up2Date
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.dll
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\DAL.pdb
+D:\DATN_KinhMat\API_CuahangKinhmat_VuTienHuy\DAL\obj\Debug\net6.0\ref\DAL.dll

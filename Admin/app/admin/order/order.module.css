@@ -1,0 +1,208 @@
+.order-page {
+  padding: 20px;
+}
+
+.order-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  padding: 15px;
+}
+
+.order-search {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.search-input {
+  width: 400px;
+  height: 45px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+
+.order-table-container {
+  overflow-x: auto;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table th {
+  padding: 10px;
+  background-color: #f3f3f3;
+}
+
+.order-table td {
+  padding: 20px 0px;
+  text-align: center;
+
+}
+
+.view-button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  width: 90%;
+  max-width: 1500px;
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.left {
+  width: 65%;
+}
+
+.right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.right p,
+.right label {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.productImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.closeButton {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputGroup input {
+  padding: 10px;
+  border: 0.2px solid #eeeeee;
+  border-radius: 12px;
+}
+
+.confirmButton {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Màu theo trạng thái */
+.status-waiting {
+  background-color: #f3f4f6; /* xám nhạt */
+  color: #374151; /* xám đậm */
+  border: 1px solid #d1d5db;
+}
+
+/* Đơn hàng đang vận chuyển */
+.status-shipping {
+  background-color: #03a9f4;
+  color: white;
+}
+
+.status-completed {
+  background-color: #22c55e; /* xanh lá */
+  color: white;
+}
+
+/* Đơn hàng bị hủy */
+.status-chogiao {
+  background-color: #e68e3c;
+  color: white;
+}
+
+
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+  margin: 20px 5px;
+}
+
+.customButton {
+  padding: 6px 12px;
+  background-color: #e5e7eb;
+  /* màu xám nhạt */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.active {
+  padding: 6px 12px;
+  background-color: #2563eb;
+  /* xanh đậm */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}

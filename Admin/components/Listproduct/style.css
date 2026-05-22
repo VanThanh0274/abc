@@ -1,0 +1,122 @@
+
+.app-left{
+    width: 292px;
+    border: 5px solid #ECF0FE;
+    border-radius: 6px;
+    padding-left: 0.3cm;
+    font-family: 'Poppins', sans-serif;
+}
+.app-left ul{
+    list-style: none;
+    padding: 0px;
+}
+.app-left button{
+    background-color: #4872FA;
+    border: none; 
+    color: #ffffff; 
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.7s;
+}
+.app-left button:hover {
+    background-color: #3453b9;
+}
+.app-left h4{
+    color: #4872FA;
+    font-size: 20px;
+}
+.app-left ul li {
+    padding: 10px;
+}
+.row-category{
+    display: none;
+}
+
+
+
+.app-right{
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif !important;
+    width: 847px;
+}
+.gioithieu-kinhcan{
+    font-size: 18px;
+
+}
+.gioithieu-kinhcan p{
+    font-size: 17px;
+    font-weight: 100;
+}
+.gioithieu-kinhcan ul li{
+    padding: 6px;
+}
+
+.hide-text{
+    display: none;
+}
+.gioithieu-kinhcan img{
+    width: 100%;
+}
+.list-product{
+    width:100%;
+    
+    
+}
+.product20{
+    width: 28%;
+    border: 0.25px solid lightgray;
+    text-align: center;
+    margin-left: 27px;
+    margin-bottom: 20px;
+    position: relative;
+    height: 350px;
+}
+.product20:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.product20 img{
+    display: block; /* Đảm bảo không có khoảng trống giữa các ảnh */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng mượt */
+}
+.product20:hover img{
+    /* transform: scale(1.15); */
+}
+.product20 span{
+    position: absolute;
+    background-color: #FA7A13;
+    color: white;
+    top: 0%;
+    right: 0%;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+}
+
+.page-sanpham{
+    clear: both;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* .page-sanpham ul{
+    list-style: none;
+    display: flex;
+    
+}
+.page-sanpham ul li{
+    border: 0.5px solid #ccc;
+    margin-right: 0.5cm;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.page-sanpham ul li:nth-child(1){
+    background-color: #4872FA;
+    color: #FFFFFF;
+}
+.page-sanpham ul li:hover{
+    background-color: #ebe4e4
+} */
+
+
+

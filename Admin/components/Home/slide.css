@@ -1,0 +1,282 @@
+.trans_img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+.trans-slides{
+    display: flex;
+    width: 98%;
+    position: relative;
+
+
+}
+.slide-img{
+    
+}
+.slide-img img {
+    width: 95%;
+    text-align: center;
+}
+.slick-next:before{
+    color: #000;
+}
+.slick-prev:before{
+    color: #000;  
+}
+.trans-slides .slick-slide {
+    transition: all 0.5s ease;
+    /* Tạo hiệu ứng mượt mà khi thay đổi */
+    opacity: 0.5;
+    /* Làm mờ mặc định */
+}
+
+.trans-slides .slick-center {
+    opacity: 1;
+    /* Slide ở giữa hiển thị rõ */
+    transform: scale(1.1);
+    /* Phóng to một chút nếu muốn nổi bật hơn */
+}
+
+
+
+
+.sosp1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 2cm;
+    font-family: 'Poppins', sans-serif !important;;
+    margin: 10px;
+    padding-top: 10px;
+}
+.sosp1 p{
+    font-size: 14px;
+    color: #575757;
+}
+.sosp{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly   ;
+    position: relative;   
+
+}
+.kinhram{
+    width: 550px;
+    height: 200px;
+ 
+}
+.sosp-kinhram{
+    position: absolute;
+    top: 1%;
+    left: 35%;
+}
+.sosp-kinhcan{
+    position: absolute;
+    top: 1%;
+    left: 80%;
+}
+.sosp-kinhram-button{
+    background-color: #3A5BC8;
+    padding: 10px;
+    border: 0px;
+    width: 140px;
+    font-size: 16px;
+    border-radius: 20px ;
+    color: #ffffff;
+    transition: background-color 0.3s;
+    
+}
+.sosp-kinhram-button:hover{
+    background-color: #ff8902;
+}
+
+
+
+.brand {
+    display: flex;
+    width: 800px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+.brand img {
+    height: 70px;
+    margin: 20px;
+}
+
+.intro {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px ;
+    font-family: 'Poppins', sans-serif !important;
+}
+.intro1{
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+}
+.intro-text {
+    width: 600px;
+    line-height: 1.5;
+
+}
+.intro-img {
+    width: 350px;
+    overflow: hidden; /* Đảm bảo phần ảnh phóng to không vượt ra ngoài */
+    position: relative;
+}
+
+.intro-img img {
+    width: 100%;
+    display: block; /* Đảm bảo không có khoảng trống giữa các ảnh */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng mượt */
+}
+
+.intro-img:hover img {
+    transform: scale(1.15); /* Phóng to nhẹ khi hover */
+}
+
+
+
+
+.row-brand {
+    padding: 2cm 0px;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif !important;
+    color: #575757;
+}
+.row-brand1{
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+}
+.col-1-brand{
+    padding: 0px 20px;
+    margin: 20px;
+    width: 370px;
+    height: 200px;
+    text-align: center;
+    padding-top: 12px;
+    transition: all 0.3s;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    
+}
+.col-1-brand p{
+    font-size: 13px;
+}
+
+/* css cho thẻ p đầu tiên trong class  */
+.col-1-brand p:first-of-type {
+    font-size: 16px;
+}
+.col-1-brand:hover{
+    margin: 0px 20px;
+
+}
+
+
+.dangki{
+    display: flex;
+    justify-content: center;
+    margin-top: 20PX;
+    width: 100%;
+    
+}
+.dangki1{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif !important;
+    /* border: 1px solid black; */
+}
+.col-1-dk {
+    width: 500px;
+}
+.col-2-dki{
+
+}
+.input-dki{
+    display:grid;
+    
+    
+}
+.input-dki input{
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    height: 30px;
+    padding: 10px;
+}
+.input-dki select{
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+.input-dki button {
+    background-color: #3A5BC8;
+    color: white;
+    padding: 10px;
+    width: 120px;
+    height: 50px;
+    border:none;
+    border-radius: 10px;
+    transition: 0.3s;
+    
+}
+.input-dki button:hover{
+    background-color: orangered;
+}
+.gt-dki {
+    color: #5f5c5c;
+}
+
+.doi-tac {
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.doi-tac-center {
+    background-color: #ECF0FE;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+
+.slidekinh{
+                
+    display: flex;
+    justify-content: center;
+}
+.slidekinh-center{
+    /* width: 1000px; */
+    width: 1150px;
+
+}
+.huy{
+    width: 250px;
+    height: 400px;
+    margin-bottom: 4px;
+
+}
+.huy:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.huy img{
+    width: 250px;
+    height: 270px;
+    
+}
+.slidekinh-center .slick-next{
+    right: 1%;
+}

@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA4579-597A-4AD0-BDA7-16921A419E54}|API_Kinhmat\\API_Kinhmat.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\api_kinhmat\\controllers\\ctr_kinhmat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA4579-597A-4AD0-BDA7-16921A419E54}|API_Kinhmat\\API_Kinhmat.csproj|solutionrelative:api_kinhmat\\controllers\\ctr_kinhmat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\dal\\dal_kinhmat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|solutionrelative:dal\\dal_kinhmat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA4579-597A-4AD0-BDA7-16921A419E54}|API_Kinhmat\\API_Kinhmat.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\api_kinhmat\\controllers\\controllers_users\\ctr_kinhmat_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA4579-597A-4AD0-BDA7-16921A419E54}|API_Kinhmat\\API_Kinhmat.csproj|solutionrelative:api_kinhmat\\controllers\\controllers_users\\ctr_kinhmat_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\dal\\dal_donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|solutionrelative:dal\\dal_donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\dal\\dal_nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|solutionrelative:dal\\dal_nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4922DF5-CDD5-40D6-A079-8601809BA97D}|BUS\\BUS.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\bus\\bus_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4922DF5-CDD5-40D6-A079-8601809BA97D}|BUS\\BUS.csproj|solutionrelative:bus\\bus_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\dal\\dal_nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|solutionrelative:dal\\dal_nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|d:\\n\u0103m ba\\call api\\apikinhmat\\api_cuahangkinhmat_vutienhuy\\dal\\dal_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D00E5190-5B62-4242-BD31-B5788E97CAE6}|DAL\\DAL.csproj|solutionrelative:dal\\dal_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ctr_Kinhmat.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\API_Kinhmat\\Controllers\\Ctr_Kinhmat.cs",
+              "RelativeDocumentMoniker": "API_Kinhmat\\Controllers\\Ctr_Kinhmat.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\API_Kinhmat\\Controllers\\Ctr_Kinhmat.cs",
+              "RelativeToolTip": "API_Kinhmat\\Controllers\\Ctr_Kinhmat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T14:21:14.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ctr_Kinhmat_user.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\API_Kinhmat\\Controllers\\Controllers_users\\Ctr_Kinhmat_user.cs",
+              "RelativeDocumentMoniker": "API_Kinhmat\\Controllers\\Controllers_users\\Ctr_Kinhmat_user.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\API_Kinhmat\\Controllers\\Controllers_users\\Ctr_Kinhmat_user.cs",
+              "RelativeToolTip": "API_Kinhmat\\Controllers\\Controllers_users\\Ctr_Kinhmat_user.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T15:13:03.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAL_Donhang.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Donhang.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_Donhang.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Donhang.cs",
+              "RelativeToolTip": "DAL\\DAL_Donhang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T01:31:23.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BUS_Danhmuc.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\BUS\\BUS_Danhmuc.cs",
+              "RelativeDocumentMoniker": "BUS\\BUS_Danhmuc.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\BUS\\BUS_Danhmuc.cs",
+              "RelativeToolTip": "BUS\\BUS_Danhmuc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T01:13:53.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DAL_Nhacungcap.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Nhacungcap.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_Nhacungcap.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Nhacungcap.cs",
+              "RelativeToolTip": "DAL\\DAL_Nhacungcap.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwB4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T00:38:31.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DAL_Nguoidung.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Nguoidung.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_Nguoidung.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Nguoidung.cs",
+              "RelativeToolTip": "DAL\\DAL_Nguoidung.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T00:38:19.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DAL_Kinhmat.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Kinhmat.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_Kinhmat.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Kinhmat.cs",
+              "RelativeToolTip": "DAL\\DAL_Kinhmat.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAmwIMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T00:38:16.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DAL_Danhmuc.cs",
+              "DocumentMoniker": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Danhmuc.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_Danhmuc.cs",
+              "ToolTip": "D:\\N\u0103m Ba\\Call API\\apikinhmat\\API_CuahangKinhmat_VuTienHuy\\DAL\\DAL_Danhmuc.cs",
+              "RelativeToolTip": "DAL\\DAL_Danhmuc.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T00:38:04.854Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1077 @@
+[
+  {
+    "ContainingType": "API_Kinhmat.Controllers.API_Nhacungcap",
+    "Method": "create",
+    "RelativePath": "api/API_Nhacungcap/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Nhacungcap",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Nhacungcap",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.API_Nhacungcap",
+    "Method": "Delete",
+    "RelativePath": "api/API_Nhacungcap/Delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.API_Nhacungcap",
+    "Method": "getall",
+    "RelativePath": "api/API_Nhacungcap/Get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Model.Nhacungcap, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.API_Nhacungcap",
+    "Method": "GetbyId",
+    "RelativePath": "api/API_Nhacungcap/GetbyId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Nhacungcap",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.API_Nhacungcap",
+    "Method": "Update",
+    "RelativePath": "api/API_Nhacungcap/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Nhacungcap",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Nhacungcap",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Danhmuc_user",
+    "Method": "Get_totalproductdanhmuc",
+    "RelativePath": "api/Ctr_Danhmuc_user/Get_totalproductdanhmuc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "danhmuc",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Danhmuc_user",
+    "Method": "Getall",
+    "RelativePath": "api/Ctr_Danhmuc_user/Getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Danhmuc",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Danhmuc",
+    "Method": "create",
+    "RelativePath": "api/Ctr_Danhmuc/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Danhmuc",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Danhmuc",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Danhmuc",
+    "Method": "delete",
+    "RelativePath": "api/Ctr_Danhmuc/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Danhmuc",
+    "Method": "getall",
+    "RelativePath": "api/Ctr_Danhmuc/Get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Danhmuc",
+    "Method": "Getbyid",
+    "RelativePath": "api/Ctr_Danhmuc/Getbyid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Danhmuc",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Danhmuc",
+    "Method": "Search",
+    "RelativePath": "api/Ctr_Danhmuc/Search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "danhmuc",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Danhmuc",
+    "Method": "update",
+    "RelativePath": "api/Ctr_Danhmuc/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Danhmuc",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Danhmuc",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Donhang_user",
+    "Method": "GetbyidUser",
+    "RelativePath": "api/Ctr_Donhang_user/GetbyidUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Donhang_user",
+    "Method": "Insert",
+    "RelativePath": "api/Ctr_Donhang_user/Insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Donhang",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Kinhmat_user",
+    "Method": "Filter",
+    "RelativePath": "api/Ctr_Kinhmat_user/Filter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chatlieu",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "kieudang",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Kinhmat_user",
+    "Method": "Getbyid",
+    "RelativePath": "api/Ctr_Kinhmat_user/Getbyid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Kinhmat",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Kinhmat_user",
+    "Method": "Getgioithieu",
+    "RelativePath": "api/Ctr_Kinhmat_user/Getgioithieu",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gioithieu",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Kinhmat_user",
+    "Method": "GetKinhmatdanhmuc",
+    "RelativePath": "api/Ctr_Kinhmat_user/GetKinhmatdanhmuc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Controllers_users.Ctr_Kinhmat_user",
+    "Method": "Search",
+    "RelativePath": "api/Ctr_Kinhmat_user/Search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ten",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "creat",
+    "RelativePath": "api/Ctr_Kinhmat/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kinhmat",
+        "Type": "Model.Kinhmat",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Kinhmat",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "Delete",
+    "RelativePath": "api/Ctr_Kinhmat/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Kinhmat",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "Getall",
+    "RelativePath": "api/Ctr_Kinhmat/Getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.ResponseData\u00601[[System.Collections.Generic.List\u00601[[Model.modelKinhmat, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "Getbyid",
+    "RelativePath": "api/Ctr_Kinhmat/Getbyid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Kinhmat",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "Search",
+    "RelativePath": "api/Ctr_Kinhmat/Search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kinhmat",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "update",
+    "RelativePath": "api/Ctr_Kinhmat/Update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "kinhmat",
+        "Type": "Model.Kinhmat",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Kinhmat",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Kinhmat",
+    "Method": "UploadFile",
+    "RelativePath": "api/Ctr_Kinhmat/Upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "thongkeDonhang",
+    "RelativePath": "api/Ctr_Thongke/Thongke_Donhang",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "thongke_month",
+    "RelativePath": "api/Ctr_Thongke/Thongke_month",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "thongke_today",
+    "RelativePath": "api/Ctr_Thongke/Thongke_today",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "thongke_tongquan",
+    "RelativePath": "api/Ctr_Thongke/Thongke_tongquan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "GetReport",
+    "RelativePath": "api/Ctr_Thongke/Thongke_year",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "Topsp_itduocmua",
+    "RelativePath": "api/Ctr_Thongke/Top5sp_itduocmua",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.Ctr_Thongke",
+    "Method": "top5spbanchay",
+    "RelativePath": "api/Ctr_Thongke/Top5spbanchay",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Thongkesanpham",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "filter",
+    "RelativePath": "api/CtrDonhang/Filter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "trangthai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.ModelDonhang",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "get_vanchuyen_bymahd",
+    "RelativePath": "api/CtrDonhang/Get_vanchuyen",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mahd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Thongtinvanchuyen",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "getall",
+    "RelativePath": "api/CtrDonhang/Getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.ModelDonhang",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "Getdonhang_byid",
+    "RelativePath": "api/CtrDonhang/Getdonhang_byid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mahd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "Insert",
+    "RelativePath": "api/CtrDonhang/Insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Donhang",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "Insert",
+    "RelativePath": "api/CtrDonhang/Insert_vanchuyen",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.Thongtinvanchuyen",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "Update",
+    "RelativePath": "api/CtrDonhang/Update_trangthai",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "trangthai",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "mahd",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrDonhang",
+    "Method": "updatevanchuyen",
+    "RelativePath": "api/CtrDonhang/Update_vanchuyen",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mavandon",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "Changepass",
+    "RelativePath": "api/CtrNguoidung/Changepassword",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "create",
+    "RelativePath": "api/CtrNguoidung/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Model.Nguoidung",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "Getall",
+    "RelativePath": "api/CtrNguoidung/Getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page_number",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "page_size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "Getbyid",
+    "RelativePath": "api/CtrNguoidung/getbyid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Nguoidung",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "Get",
+    "RelativePath": "api/CtrNguoidung/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Model.AuthenticateModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "update",
+    "RelativePath": "api/CtrNguoidung/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Model.Nguoidung",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.CtrNguoidung",
+    "Method": "UpdateRole",
+    "RelativePath": "api/CtrNguoidung/UpdateRole",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "state",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Kinhmat.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_Kinhmat.WeatherForecast, API_Kinhmat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

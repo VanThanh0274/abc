@@ -1,0 +1,45 @@
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.left{
+    width: 840px;
+    padding: 4px 25px;
+}
+
+.vip-menuItem{
+    display: none;
+}
+
+.content p{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+}
+.saleInfo h3{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 20px;
+}
+.saleContent{
+    line-height: 1.7;
+    color: #000000;
+}
+.saleNhaphoc ul{
+    padding: 0px;
+    font-family: 'Poppins', sans-serif !important;
+}
+.saleNhaphoc ul li {
+    margin: 10px;
+    font-size: 16px;
+}
+.saleImage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sale-lienhe span{
+    color: #5679ec;
+}
+.sale-lienhe span:hover{
+    color: #000000;
+}

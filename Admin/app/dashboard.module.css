@@ -1,0 +1,101 @@
+.dashboardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 100px;
+}
+
+
+.dashboardChart {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  
+}
+
+.chartBox {
+  flex: 1;
+  background-color: white;
+
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chartTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.button {
+  padding: 6px 12px;
+  background-color: #e5e7eb; /* màu xám nhạt */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.activeButton {
+  padding: 6px 12px;
+  background-color: #2563eb; /* xanh đậm */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dashboardTilte{
+  padding: 20px 20px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #faf7f7;
+  border-radius: 10px;
+}
+.dashboardTilte2{
+  padding: 37px 0px;
+}
+.dashboardTilteToday{
+  display: flex;
+}
+
+.card {
+  padding:0px 20px;
+  border-right: 2px solid #ccc;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 120px; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.iconContainer {
+  /* background-color: #a5b0f1; */
+  
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}

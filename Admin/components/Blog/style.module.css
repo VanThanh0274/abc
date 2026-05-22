@@ -1,0 +1,34 @@
+.right{
+    width: 300px;
+
+}
+.vip-menuItem{
+    display: none;
+}
+.right h1{
+    font-size: 22px; 
+    color: #5679ec;
+}
+.right{
+    margin-left: 0.5cm;
+}
+.menu a{
+    text-decoration: none;
+    color: #5679ec;
+}
+ul.menu, ul.menu ul{
+    list-style: none;
+    font-family: 'Poppins', sans-serif !important;
+}
+ul.menu{
+    width: 250px;
+    padding: 0px;
+    margin: 0px;
+}
+ul.menu>li{
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    padding-top: 3px;
+    margin: 10px;
+    
+}

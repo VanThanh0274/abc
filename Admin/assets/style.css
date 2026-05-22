@@ -1,0 +1,36 @@
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center; 
+  margin-top: 20px;
+}
+
+.page-num {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #337ab7; /* Link color */
+  text-decoration: none;
+}
+
+.page-num:hover {
+  background-color: #eee;
+}
+
+.pagination .active {
+  background-color: #337ab7; /* Active page background */
+  color: white;
+  border-color: #337ab7;
+}
+
+.pagination .disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

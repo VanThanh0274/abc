@@ -1,0 +1,257 @@
+.account {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; 
+    min-height: 100vh; /* Chiếm toàn bộ chiều cao viewport */
+    background-color: #fff; /* Màu nền nhẹ */
+    padding: 20px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tràn width */
+}
+
+.accountCenter {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px; /* Bo góc nhẹ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    display: flex;
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+    align-items: center; /* Căn giữa các item bên trong theo chiều ngang */
+    width: 100%;
+    max-width: 450px; /* Giới hạn chiều rộng tối đa */
+
+}
+
+.avatarContainer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.avatarPlaceholder {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 50%; /* Hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto;
+    font-size: 50px; /* Kích thước icon hoặc chữ */
+    color: #a0a0a0;
+    /* Có thể thay bằng ảnh avatar nếu có */
+    /* background-image: url('/path/to/avatar.png'); */
+    /* background-size: cover; */
+}
+.avatarPlaceholder img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.usernameDisplay {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.inputGroup {
+    width: 100%;
+    margin-bottom: 25px; /* Khoảng cách giữa các nhóm input */
+    position: relative; /* Để label có thể nằm trên border */
+}
+
+.inputGroup label {
+    position: absolute;
+    top: -10px; /* Đẩy lên trên input */
+    left: 15px;
+    background-color: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #555;
+    z-index: 1; /* Đảm bảo label nằm trên border của input */
+}
+
+.inputField {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none; /* Bỏ border khi focus */
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng width */
+}
+
+.inputField:focus {
+    border-color: #7b68ee; /* Màu border khi focus */
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa hai nút */
+    margin-top: 20px; /* Khoảng cách từ input cuối cùng */
+    width: 100%;
+    justify-content: center; /* Căn giữa các nút */
+}
+
+.saveButton,
+.changePasswordButton {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px; /* Bo tròn nút */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 150px; /* Đảm bảo kích thước tối thiểu */
+}
+
+.saveButton {
+    background-color: #7b68ee; /* Màu tím từ hình ảnh */
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: #6a5acd; /* Tối hơn khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nhấc nhẹ */
+}
+
+.changePasswordButton {
+    background-color: #9370db; /* Màu tím nhạt hơn */
+    color: white;
+}
+
+.changePasswordButton:hover {
+    background-color: #8364c7; /* Tối hơn khi hover */
+    transform: translateY(-2px);
+}
+
+/* ... (Các style hiện có của bạn cho Profile) ... */
+
+/* Style cho Overlay (làm mờ nền) */
+.overlay {
+    position: fixed; /* Cố định vị trí trên màn hình */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền đen mờ */
+    display: flex;
+    justify-content: center; /* Căn giữa form theo chiều ngang */
+    align-items: center; /* Căn giữa form theo chiều dọc */
+    z-index: 1000; /* Đảm bảo overlay nằm trên cùng */
+}
+
+/* Style cho Form Đổi Mật khẩu */
+.changePasswordForm {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px; /* Giới hạn chiều rộng của form */
+    position: relative; /* Để các phần tử con có thể định vị tương đối */
+}
+
+.changePasswordForm h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Input Group và Field trong form đổi mật khẩu (tái sử dụng từ profile nếu muốn) */
+/* Nếu bạn muốn style riêng biệt, có thể tạo class mới */
+.changePasswordForm .inputGroup {
+    margin-bottom: 20px;
+}
+
+.changePasswordForm .inputField {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tràn width */
+}
+
+.changePasswordForm .inputGroup label {
+    position: static; /* Đặt lại position để label nằm trên input bình thường */
+    display: block; /* Đảm bảo label chiếm dòng riêng */
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #555;
+    background-color: transparent; /* Bỏ màu nền của label */
+    padding: 0;
+}
+
+/* Nhóm nút trong form đổi mật khẩu */
+.buttonGroupForm {
+    display: flex;
+    justify-content: space-around; /* Chia đều khoảng cách giữa các nút */
+    margin-top: 30px;
+}
+
+.submitButton,
+.cancelButton {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+}
+
+.submitButton {
+    background-color: #7b68ee; /* Màu tím */
+    color: white;
+}
+
+.submitButton:hover {
+    background-color: #6a5acd;
+    transform: translateY(-1px);
+}
+
+.cancelButton {
+    background-color: #ccc; /* Màu xám */
+    color: #333;
+}
+
+.cancelButton:hover {
+    background-color: #bbb;
+    transform: translateY(-1px);
+}
+
+/* Responsive cho form (tùy chọn) */
+@media (max-width: 500px) {
+    .changePasswordForm {
+        margin: 0 15px;
+    }
+    .buttonGroupForm {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .submitButton, .cancelButton {
+        width: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .accountCenter {
+        padding: 30px 20px;
+        margin: 0 15px; /* Thêm margin hai bên trên di động */
+    }
+
+    .buttonGroup {
+        flex-direction: column; /* Xếp chồng các nút trên màn hình nhỏ */
+        gap: 15px;
+        width: 80%; /* Giới hạn chiều rộng nút trên di động */
+    }
+
+    .saveButton,
+    .changePasswordButton {
+        width: 100%; /* Nút chiếm toàn bộ chiều rộng */
+        min-width: unset;
+    }
+}

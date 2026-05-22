@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff; /* Màu nền nhạt */
+}
+
+.login-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Điều chỉnh độ rộng theo ý muốn */
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e91e63; /* Màu hồng đậm */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: #777;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.continue-button {
+  background-color: #e91e63; /* Màu hồng đậm */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #c8104a; /* Màu hồng đậm hơn khi hover */
+}
+
+.social-login {
+  margin-top: 20px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.line {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.or-text {
+  margin: 0 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+.twitter-button,
+.facebook-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.twitter-button {
+  background-color: #1da1f2; /* Màu xanh Twitter */
+}
+
+.twitter-button:hover {
+  background-color: #0c85d0; /* Màu xanh Twitter đậm hơn khi hover */
+}
+
+.facebook-button {
+  background-color: #1877f2; /* Màu xanh Facebook */
+}
+
+.facebook-button:hover {
+  background-color: #1365d1; /* Màu xanh Facebook đậm hơn khi hover */
+}
+
+.social-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}

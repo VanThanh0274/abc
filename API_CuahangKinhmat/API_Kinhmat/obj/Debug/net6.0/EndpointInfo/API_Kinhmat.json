@@ -1,0 +1,2184 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API_Kinhmat",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/API_Nhacungcap/Get-all": {
+      "get": {
+        "tags": [
+          "API_Nhacungcap"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nhacungcap"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nhacungcap"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Nhacungcap"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/API_Nhacungcap/Create": {
+      "post": {
+        "tags": [
+          "API_Nhacungcap"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nhacungcap"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nhacungcap"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nhacungcap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/API_Nhacungcap/Delete/{id}": {
+      "delete": {
+        "tags": [
+          "API_Nhacungcap"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/API_Nhacungcap/Update": {
+      "put": {
+        "tags": [
+          "API_Nhacungcap"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nhacungcap"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nhacungcap"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nhacungcap"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/API_Nhacungcap/GetbyId": {
+      "get": {
+        "tags": [
+          "API_Nhacungcap"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nhacungcap"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc/Get-all": {
+      "get": {
+        "tags": [
+          "Ctr_Danhmuc"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc/Search": {
+      "get": {
+        "tags": [
+          "Ctr_Danhmuc"
+        ],
+        "parameters": [
+          {
+            "name": "danhmuc",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc/Create": {
+      "post": {
+        "tags": [
+          "Ctr_Danhmuc"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Danhmuc"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Danhmuc"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Danhmuc"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc/Update": {
+      "put": {
+        "tags": [
+          "Ctr_Danhmuc"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Danhmuc"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Danhmuc"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Danhmuc"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc/Delete": {
+      "delete": {
+        "tags": [
+          "Ctr_Danhmuc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc/Getbyid": {
+      "get": {
+        "tags": [
+          "Ctr_Danhmuc"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc_user/Getall": {
+      "get": {
+        "tags": [
+          "Ctr_Danhmuc_user"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Danhmuc"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Danhmuc_user/Get_totalproductdanhmuc": {
+      "get": {
+        "tags": [
+          "Ctr_Danhmuc_user"
+        ],
+        "parameters": [
+          {
+            "name": "danhmuc",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Donhang_user/Insert": {
+      "post": {
+        "tags": [
+          "Ctr_Donhang_user"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Donhang"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Donhang"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Donhang"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Donhang_user/GetbyidUser": {
+      "get": {
+        "tags": [
+          "Ctr_Donhang_user"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Getall": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "parameters": [
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/modelKinhmatListResponseData"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/modelKinhmatListResponseData"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/modelKinhmatListResponseData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Getbyid": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Update": {
+      "put": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kinhmat"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kinhmat"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kinhmat"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Create": {
+      "post": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kinhmat"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kinhmat"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kinhmat"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Delete": {
+      "delete": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Upload": {
+      "post": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat/Search": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat"
+        ],
+        "parameters": [
+          {
+            "name": "kinhmat",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat_user/GetKinhmatdanhmuc": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat_user"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat_user/Getgioithieu": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat_user"
+        ],
+        "parameters": [
+          {
+            "name": "gioithieu",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat_user/Getbyid": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat_user"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Kinhmat"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat_user/Search": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat_user"
+        ],
+        "parameters": [
+          {
+            "name": "ten",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Kinhmat_user/Filter": {
+      "get": {
+        "tags": [
+          "Ctr_Kinhmat_user"
+        ],
+        "parameters": [
+          {
+            "name": "chatlieu",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kieudang",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Top5spbanchay": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thongkesanpham"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thongkesanpham"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thongkesanpham"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Thongke_today": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Thongke_year": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "parameters": [
+          {
+            "name": "year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Thongke_month": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "parameters": [
+          {
+            "name": "month",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Thongke_tongquan": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Thongke_Donhang": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "parameters": [
+          {
+            "name": "year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Ctr_Thongke/Top5sp_itduocmua": {
+      "get": {
+        "tags": [
+          "Ctr_Thongke"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Getall": {
+      "get": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "parameters": [
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelDonhang"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelDonhang"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelDonhang"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Filter": {
+      "get": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "trangthai",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelDonhang"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelDonhang"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelDonhang"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Getdonhang_byid": {
+      "get": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "parameters": [
+          {
+            "name": "mahd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Insert": {
+      "post": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Donhang"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Donhang"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Donhang"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Update_trangthai": {
+      "put": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "parameters": [
+          {
+            "name": "trangthai",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mahd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Get_vanchuyen": {
+      "get": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "parameters": [
+          {
+            "name": "mahd",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thongtinvanchuyen"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thongtinvanchuyen"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thongtinvanchuyen"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Insert_vanchuyen": {
+      "post": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Thongtinvanchuyen"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Thongtinvanchuyen"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Thongtinvanchuyen"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrDonhang/Update_vanchuyen": {
+      "put": {
+        "tags": [
+          "CtrDonhang"
+        ],
+        "parameters": [
+          {
+            "name": "mavandon",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/login": {
+      "post": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthenticateModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/create": {
+      "post": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nguoidung"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nguoidung"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nguoidung"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/update": {
+      "put": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nguoidung"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nguoidung"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Nguoidung"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/getbyid": {
+      "get": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nguoidung"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nguoidung"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Nguoidung"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/Changepassword": {
+      "get": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/Getall": {
+      "get": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "parameters": [
+          {
+            "name": "page_number",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/CtrNguoidung/UpdateRole": {
+      "get": {
+        "tags": [
+          "CtrNguoidung"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthenticateModel": {
+        "required": [
+          "pass",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "pass": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Danhmuc": {
+        "type": "object",
+        "properties": {
+          "ma": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tendanhmuc": {
+            "type": "string",
+            "nullable": true
+          },
+          "mota": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Donhang": {
+        "type": "object",
+        "properties": {
+          "mahd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "iduser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "sdt": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "diachi": {
+            "type": "string",
+            "nullable": true
+          },
+          "ghichu": {
+            "type": "string",
+            "nullable": true
+          },
+          "thoigian": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tongtien": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trangthai": {
+            "type": "string",
+            "nullable": true
+          },
+          "listjson_chitiet": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DonhangChitiet"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DonhangChitiet": {
+        "type": "object",
+        "properties": {
+          "macthd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mahd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "masp": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "soluong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "giaban": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Kinhmat": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "soluong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "madanhmuc": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "giaban": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gianhap": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gioithieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "xuatxu": {
+            "type": "string",
+            "nullable": true
+          },
+          "chatlieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "kieudang": {
+            "type": "string",
+            "nullable": true
+          },
+          "mota": {
+            "type": "string",
+            "nullable": true
+          },
+          "anh": {
+            "type": "string",
+            "nullable": true
+          },
+          "trangthai": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModelDonhang": {
+        "type": "object",
+        "properties": {
+          "mahd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "iduser": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "sdt": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "diachi": {
+            "type": "string",
+            "nullable": true
+          },
+          "ghichu": {
+            "type": "string",
+            "nullable": true
+          },
+          "thoigian": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tongtien": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trangthai": {
+            "type": "string",
+            "nullable": true
+          },
+          "listjson_chitiet": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModelDonhangChitiet"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModelDonhangChitiet": {
+        "type": "object",
+        "properties": {
+          "macthd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mahd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "masp": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "anh": {
+            "type": "string",
+            "nullable": true
+          },
+          "soluong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "giaban": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nguoidung": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "pass": {
+            "type": "string",
+            "nullable": true
+          },
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "sdt": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "trangthai": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Nhacungcap": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenncc": {
+            "type": "string",
+            "nullable": true
+          },
+          "sdt": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "diachi": {
+            "type": "string",
+            "nullable": true
+          },
+          "trangthai": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Thongkesanpham": {
+        "type": "object",
+        "properties": {
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "sl": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Thongtinvanchuyen": {
+        "type": "object",
+        "properties": {
+          "mavandon": {
+            "type": "string",
+            "nullable": true
+          },
+          "mahd": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "donvivanchuyen": {
+            "type": "string",
+            "nullable": true
+          },
+          "ngaygiao": {
+            "type": "string",
+            "nullable": true
+          },
+          "ngaynhan": {
+            "type": "string",
+            "nullable": true
+          },
+          "trangthai": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "modelKinhmat": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ten": {
+            "type": "string",
+            "nullable": true
+          },
+          "soluong": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "danhmuc": {
+            "type": "string",
+            "nullable": true
+          },
+          "giaban": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gianhap": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "gioithieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "xuatxu": {
+            "type": "string",
+            "nullable": true
+          },
+          "chatlieu": {
+            "type": "string",
+            "nullable": true
+          },
+          "kieudang": {
+            "type": "string",
+            "nullable": true
+          },
+          "mota": {
+            "type": "string",
+            "nullable": true
+          },
+          "anh": {
+            "type": "string",
+            "nullable": true
+          },
+          "trangthai": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "modelKinhmatListResponseData": {
+        "type": "object",
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "page_size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/modelKinhmat"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Nhập token với tiền tố 'Bearer' (ví dụ: Bearer {token})",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+.history {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px; /* Thêm padding trên để không bị dính vào mép trên */
+    padding-bottom: 50px; /* Thêm padding dưới nếu cần */
+}
+
+.historyCenter {
+    width: 70%;
+    max-width: 1000px; /* Giới hạn chiều rộng tối đa để trông đẹp hơn trên màn hình lớn */
+    /* background-color: red; */
+}
+
+.orderItem {
+    width: 100%; /* Đổi từ 80% sang 100% để lấp đầy historyCenter */
+    background-color: #fff; /* Chuyển sang màu trắng để giống hình ảnh */
+    border: 1px solid #e0e0e0; /* Thêm viền nhẹ */
+    border-radius: 8px; /* Bo góc nhẹ */
+    margin: 15px 0; /* Điều chỉnh margin cho phù hợp, bỏ 90px */
+    padding: 15px 20px; /* Thêm padding bên trong item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Thêm đổ bóng nhẹ */
+}
+
+.stateorder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0; /* Đường kẻ dưới để phân tách */
+    margin-bottom: 15px; /* Khoảng cách với phần nội dung bên dưới */
+}
+
+.stateorder a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px; /* Tăng kích thước font cho tên cửa hàng/thương hiệu */
+    font-weight: 600; /* Đậm hơn */
+}
+
+.stateorder span {
+    font-size: 14px; /* Điều chỉnh kích thước font */
+    color: #28a745; /* Màu xanh lá cho trạng thái "Hoàn thành" */
+    font-weight: 500;
+}
+
+/* Product Detail Section */
+.productDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #f0f0f0; /* Đường kẻ đứt quãng */
+}
+
+.productInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa ảnh và text */
+}
+
+.productImage {
+    width: 80px; /* Kích thước ảnh sản phẩm */
+    height: 80px;
+    object-fit: contain; /* Đảm bảo ảnh không bị méo */
+    border-radius: 4px;
+    border: 1px solid #eee;
+    padding: 5px; /* Đảm bảo hình ảnh không chạm vào viền */
+}
+
+.textInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Khoảng cách giữa các dòng text */
+}
+
+.productName {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.productCategory,
+.productQuantity {
+    font-size: 14px;
+    color: #666;
+}
+
+.productPrice {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    min-width: 100px; /* Đảm bảo đủ chỗ cho giá */
+    text-align: right; /* Căn phải giá */
+}
+
+/* ... (Giữ nguyên các styles đã có ở trên cho .history, .historyCenter, .orderItem, .stateorder, .productDetail, .productInfo, .productImage, .textInfo, .productName, .productCategory, .productQuantity, .productPrice, .unitPrice) ... */
+
+.orderSummary {
+    display: flex;
+    justify-content: space-between; /* Đẩy hai phần sang hai bên */
+    align-items: flex-end; /* Căn bottom để nút và tiền thẳng hàng với nhau */
+    padding-top: 10px;
+    flex-wrap: wrap; /* Cho phép các mục xuống dòng nếu không đủ chỗ */
+    gap: 15px; /* Khoảng cách giữa các khối khi xuống dòng */
+}
+
+.deliveryInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #555;
+    flex-basis: 50%; /* Chiếm khoảng 50% chiều rộng mặc định */
+    min-width: 250px; /* Đảm bảo đủ chỗ cho thông tin địa chỉ */
+}
+
+.deliveryTitle {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 15px;
+}
+
+.deliveryName {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.deliveryAddress {
+    line-height: 1.4;
+}
+
+
+.summaryActionsGroup {
+    display: flex;
+    flex-direction: column; /* Xếp chồng tổng tiền và nút */
+    align-items: flex-end; /* Căn phải cho tổng tiền và nút */
+    gap: 10px; /* Khoảng cách giữa tổng tiền và nút */
+    flex-basis: 40%; /* Chiếm khoảng 40% chiều rộng mặc định */
+    min-width: 200px; /* Đảm bảo đủ chỗ cho tổng tiền và nút */
+}
+
+.totalAmount {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.totalAmount span:first-child {
+    font-size: 15px;
+    color: #666;
+}
+
+.totalPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e45656;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.reorderButton,
+.detailButton {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.reorderButton {
+    background-color: #6c757d;
+    color: white;
+}
+
+.reorderButton:hover {
+    background-color: #5a6268;
+}
+
+.detailButton {
+    background-color: #007bff;
+    color: white;
+}
+
+.detailButton:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .historyCenter {
+        width: 95%;
+    }
+
+    .orderItem {
+        padding: 10px 15px;
+    }
+
+    .productDetail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .productPrice {
+        text-align: left;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .orderSummary {
+        flex-direction: column; /* Trên màn hình nhỏ, xếp chồng thông tin địa chỉ và tổng tiền/nút */
+        align-items: flex-start; /* Căn trái tất cả */
+        gap: 20px; /* Tăng khoảng cách */
+    }
+
+    .deliveryInfo,
+    .summaryActionsGroup {
+        flex-basis: 100%; /* Chiếm toàn bộ chiều rộng */
+        min-width: unset; /* Bỏ giới hạn min-width */
+    }
+
+    .summaryActionsGroup {
+        align-items: flex-start; /* Căn trái cho tổng tiền và nút khi xếp chồng */
+    }
+
+    .actionButtons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... (Giữ nguyên các styles cho màn hình 480px nếu có) ... */
+    .stateorder a {
+        font-size: 16px;
+    }
+    .stateorder span {
+        font-size: 13px;
+    }
+    .productImage {
+        width: 60px;
+        height: 60px;
+    }
+    .productName {
+        font-size: 14px;
+    }
+    .productCategory,
+    .productQuantity {
+        font-size: 12px;
+    }
+    .totalPrice {
+        font-size: 18px; /* Slightly smaller for mobile */
+    }
+    .reorderButton,
+    .detailButton {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    .deliveryInfo {
+        font-size: 13px;
+    }
+    .deliveryTitle {
+        font-size: 14px;
+    }
+}
