@@ -1,4 +1,4 @@
-﻿using BUS;
+using BUS;
 using BUS.Interface;
 using DAL;
 using DAL.Helper.Interface;
@@ -13,8 +13,10 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+builder.Services.AddHttpClient();
+
+// DI registrations
 builder.Services.AddTransient<IDbSql, DbSql>();
 builder.Services.AddTransient<IDAL_Nhacungcap, DAL_Nhacungcap>();
 builder.Services.AddTransient<IBUS_Nhacungcap, BUS_Nhacungcap>();
@@ -28,10 +30,11 @@ builder.Services.AddTransient<Ibus_Nguoidung, BUS_Nguoidung>();
 builder.Services.AddTransient<Idal_Nguoidung, DAL_Nguoidung>();
 builder.Services.AddTransient<Ibus_Thongke, BUS_Thongke>();
 builder.Services.AddTransient<Idal_Thongke, DAL_Thongke>();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddTransient<Idal_Message, DAL_Message>();
+builder.Services.AddTransient<Ibus_Message, BUS_Message>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["AppSettings:Secret"]);
 
@@ -52,9 +55,6 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false
     };
 });
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
 
 // Add Swagger with JWT support
 builder.Services.AddSwaggerGen(options =>
@@ -85,20 +85,12 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-
 var app = builder.Build();
-//app.UseStaticFiles(new StaticFileOptions
-//{
-//    FileProvider = new PhysicalFileProvider("D:\\Năm Ba\\Call API\\apikinhmat\\image\\product"),
-//    RequestPath = "/files"
-//});
-//tự thêm của chat
+
 app.UseCors(builder =>
     builder.AllowAnyOrigin()
            .AllowAnyMethod()
            .AllowAnyHeader());
-
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -113,9 +105,6 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseAuthorization();
-
 app.MapControllers();
-
 
 app.Run();

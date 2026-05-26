@@ -1,10 +1,9 @@
 "use client"
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import Chatbot from '../../components/Chatbot/Chatbot';
 import { usePathname } from 'next/navigation';
 import { ToastContainer } from "react-toastify";
-
-
 
 export default function UserLayout({ children }) {
   // const pathname = usePathname();
@@ -14,6 +13,7 @@ export default function UserLayout({ children }) {
       {<Header />}
       <main>{children}</main>
       { <Footer />}
+      <Chatbot />
       <ToastContainer/>
     </>
   );
