@@ -1839,23 +1839,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Khanh\\.nuget\\packages\\": {},
+    "C:\\Users\\VanThanh\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\abc\\API_CuahangKinhmat\\API_Kinhmat\\API_Kinhmat.csproj",
+      "projectUniqueName": "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\API_Kinhmat\\API_Kinhmat.csproj",
       "projectName": "API_Kinhmat",
-      "projectPath": "E:\\abc\\API_CuahangKinhmat\\API_Kinhmat\\API_Kinhmat.csproj",
-      "packagesPath": "C:\\Users\\Khanh\\.nuget\\packages\\",
-      "outputPath": "E:\\abc\\API_CuahangKinhmat\\API_Kinhmat\\obj\\",
+      "projectPath": "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\API_Kinhmat\\API_Kinhmat.csproj",
+      "packagesPath": "C:\\Users\\VanThanh\\.nuget\\packages\\",
+      "outputPath": "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\API_Kinhmat\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Khanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VanThanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1870,11 +1870,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\abc\\API_CuahangKinhmat\\BUS\\BUS.csproj": {
-              "projectPath": "E:\\abc\\API_CuahangKinhmat\\BUS\\BUS.csproj"
+            "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\BUS\\BUS.csproj": {
+              "projectPath": "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\BUS\\BUS.csproj"
             },
-            "E:\\abc\\API_CuahangKinhmat\\Model\\Model.csproj": {
-              "projectPath": "E:\\abc\\API_CuahangKinhmat\\Model\\Model.csproj"
+            "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\Model\\Model.csproj": {
+              "projectPath": "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\Model\\Model.csproj"
             }
           }
         }
@@ -1889,7 +1889,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net6.0": {
@@ -1915,24 +1915,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.36, 6.0.36]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.36, 6.0.36]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1941,7 +1923,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

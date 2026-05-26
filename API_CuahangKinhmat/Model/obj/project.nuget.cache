@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "crJUUmX5Jt4=",
+  "dgSpecHash": "+zt0XCVeEsU=",
   "success": true,
-  "projectFilePath": "E:\\abc\\API_CuahangKinhmat\\Model\\Model.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Khanh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\Khanh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
-    "C:\\Users\\Khanh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\DATN_KinhMat\\abc\\API_CuahangKinhmat\\Model\\Model.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
