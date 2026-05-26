@@ -73,13 +73,14 @@ namespace BUS
                             cl = item.chatlieu,
                             kd = item.kieudang,
                             xx = item.xuatxu,
+                            anh = item.anh,
                             tt = item.trangthai == 1 ? "Còn hàng" : "Hết hàng"
                         });
                     }
                     productsJson = JsonSerializer.Serialize(minifiedProducts);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Bỏ qua lỗi truy cập DB để tránh gián đoạn hội thoại
                 productsJson = "[]";
@@ -95,7 +96,15 @@ namespace BUS
                                        "Lưu ý quan trọng: \n" +
                                        "- Khi tư vấn, hãy ưu tiên giới thiệu các mẫu sản phẩm có tên, giá và thông số cụ thể khớp với nhu cầu của khách hàng từ danh sách trên.\n" +
                                        "- Không bịa đặt hoặc tự nghĩ ra các mẫu sản phẩm không có trong danh sách trên.\n" +
-                                       "- Tư vấn nhiệt tình về chất liệu (kim loại, nhựa dẻo...), xu hướng, và kiểu dáng phù hợp với khuôn mặt khách hàng.";
+                                       "- Tư vấn nhiệt tình về chất liệu (kim loại, nhựa dẻo...), xu hướng, và kiểu dáng phù hợp với khuôn mặt khách hàng.\n" +
+                                       "- Định dạng câu trả lời bắt buộc:\n" +
+                                       "  1. Trả lời bằng văn bản tự nhiên, ngắn gọn và thân thiện (sử dụng Markdown bôi đậm bằng ** khi cần).\n" +
+                                       "  2. Nếu bạn giới thiệu hoặc gợi ý bất kỳ sản phẩm nào từ danh sách sản phẩm ở trên, bạn BẮT BUỘC phải kèm theo một khối mảng JSON chứa các sản phẩm được gợi ý ở cuối cùng câu trả lời, được đặt chính xác ở giữa thẻ [RECOMMENDATIONS] và [/RECOMMENDATIONS] theo cấu trúc ví dụ dưới đây (không viết bất kỳ chữ gì khác ngoài mảng JSON này trong thẻ đó):\n" +
+                                       "     [RECOMMENDATIONS]\n" +
+                                       "     [\n" +
+                                       "       {\"id\": 2, \"ten\": \"Tên gọng kính\", \"gia\": 250000, \"anh\": \"product9.jpg\"}\n" +
+                                       "     ]\n" +
+                                       "     [/RECOMMENDATIONS]";
 
             conversationContents.Add(new
             {

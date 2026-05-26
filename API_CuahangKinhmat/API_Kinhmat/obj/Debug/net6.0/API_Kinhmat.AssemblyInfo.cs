@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API_Kinhmat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0f5374aaa0f4319ca619b156f130693fe326554")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98fd7db9a62706d8b7c8717bb1a61759ab652728")]
 [assembly: System.Reflection.AssemblyProductAttribute("API_Kinhmat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API_Kinhmat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

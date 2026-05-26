@@ -5,6 +5,8 @@ import { LuMessageSquare, LuSend, LuX, LuTrash2, LuBot } from 'react-icons/lu';
 import { apiSendChatMessage, apiGetChatHistory, apiClearChatHistory } from '../../services/chatbot';
 import { Getiduser } from '../../services/auth';
 import { toast } from 'react-toastify';
+import ReactMarkdown from 'react-markdown';
+import { useRouter } from 'next/navigation';
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +16,7 @@ export default function Chatbot() {
   const [iduser, setIduser] = useState(null);
   
   const messagesEndRef = useRef(null);
+  const router = useRouter();
 
   // Default welcome message
   const defaultWelcome = {
@@ -134,6 +137,38 @@ export default function Chatbot() {
     }
   };
 
+  // Hàm tiền xử lý trích xuất sản phẩm JSON từ phản hồi bằng RegExp
+  const parseMessage = (msg) => {
+    if (msg.role !== 'model') {
+      return { text: msg.content, products: [] };
+    }
+
+    const regex = /\[RECOMMENDATIONS\]([\s\S]*?)\[\/RECOMMENDATIONS\]/;
+    const match = msg.content.match(regex);
+
+    if (match) {
+      const jsonStr = match[1].trim();
+      let products = [];
+      try {
+        products = JSON.parse(jsonStr);
+      } catch (e) {
+        console.error("Lỗi khi phân tích JSON sản phẩm gợi ý:", e);
+      }
+      
+      // Loại bỏ thẻ RECOMMENDATIONS khỏi nội dung chữ hiển thị
+      const cleanText = msg.content.replace(regex, '').trim();
+      return { text: cleanText, products };
+    }
+
+    return { text: msg.content, products: [] };
+  };
+
+  // Điều hướng người dùng tới trang chi tiết sản phẩm
+  const handleProductClick = (prodId) => {
+    setIsOpen(false); // Đóng cửa sổ chat khi chuyển trang
+    router.push(`/products?id=${prodId}`);
+  };
+
   return (
     <>
       {/* Floating Action Button */}
@@ -182,17 +217,52 @@ export default function Chatbot() {
 
           {/* Messages Body */}
           <div className="chatbot-messages-body">
-            {messages.map((msg, index) => (
-              <div 
-                key={index} 
-                className={`chatbot-msg-wrapper ${msg.role === 'user' ? 'user' : 'model'}`}
-              >
-                <div className="chatbot-bubble">
-                  {msg.content}
-                  <div className="chatbot-time">{formatTime(msg.thoigian)}</div>
+            {messages.map((msg, index) => {
+              const parsed = parseMessage(msg);
+              return (
+                <div 
+                  key={index} 
+                  className={`chatbot-msg-wrapper ${msg.role === 'user' ? 'user' : 'model'}`}
+                >
+                  <div className="chatbot-bubble">
+                    {msg.role === 'model' ? (
+                      <ReactMarkdown>{parsed.text}</ReactMarkdown>
+                    ) : (
+                      parsed.text
+                    )}
+
+                    {/* Dựng các Card sản phẩm gợi ý nếu có */}
+                    {parsed.products && parsed.products.length > 0 && (
+                      <div className="chatbot-prod-recommendations">
+                        <p className="chatbot-prod-rec-title">Sản phẩm gợi ý:</p>
+                        <div className="chatbot-prod-list">
+                          {parsed.products.map((prod) => (
+                            <div 
+                              key={prod.id} 
+                              className="chatbot-prod-card"
+                              onClick={() => handleProductClick(prod.id)}
+                            >
+                              <img 
+                                src={`http://localhost:5273/images/product/${prod.anh || 'default.jpg'}`} 
+                                alt={prod.ten} 
+                                className="chatbot-prod-img"
+                              />
+                              <div className="chatbot-prod-details">
+                                <span className="chatbot-prod-name">{prod.ten}</span>
+                                <span className="chatbot-prod-price">{prod.gia?.toLocaleString('vi-VN')} đ</span>
+                                <span className="chatbot-prod-btn">Xem chi tiết</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="chatbot-time">{formatTime(msg.thoigian)}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             {/* Loading typing indicator */}
             {isLoading && (
