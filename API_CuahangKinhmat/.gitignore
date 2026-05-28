@@ -1,0 +1,21 @@
+# C# / .NET
+[Oo]bj/
+[Bb]in/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Secrets and Configs
+appsettings.json
+appsettings.Development.json
+
+# Visual Studio
+.vs/
+*.sqlite3
+
+# Env files
+.env*
