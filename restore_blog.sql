@@ -1,0 +1,11 @@
+USE API_Kinhmat;
+GO
+
+INSERT INTO Blog (tieude, noidung, tomtat, anh, madanhmuc, tacgia, luotxem, trangthai, ngaytao, ngaycapnhat)
+VALUES
+(N'CHĂM SÓC MẮT CẬN THỊ ĐÚNG CÁCH ĐỂ KHÔNG BỊ TĂNG ĐỘ', N'<p>Cách chăm sóc mắt cận thị đúng cách để không tăng độ... Theo các nhà nghiên cứu, bệnh cận thị thường xuất phát từ hai nguyên nhân chính là di truyền hoặc lối sống…</p>', N'Cách chăm sóc mắt cận thị đúng cách để không tăng độ... Theo các nhà nghiên cứu, bệnh cận thị thường xuất phát từ hai nguyên nhân chính là di truyền hoặc lối sống…', '/images/blog/blog0.png', NULL, N'Admin', 120, 1, '2022-10-29', '2022-10-29'),
+(N'TOP THỰC PHẨM TỐT CHO MẮT', N'<p>10 thực phẩm tốt cho mắt... Việc bổ sung các thực phẩm dinh dưỡng cho mắt cần được quan tâm nhiều hơn trong bữa ăn hàng ngày...</p>', N'10 thực phẩm tốt cho mắt... Việc bổ sung các thực phẩm dinh dưỡng cho mắt cần được quan tâm nhiều hơn trong bữa ăn hàng ngày...', '/images/blog/blog2.jpg', NULL, N'Admin', 85, 1, '2022-10-25', '2022-10-25'),
+(N'QUY TẮC 20-20-20 NGĂN NGỪA CHỨNG MỎI MẮT', N'<p>Thời gian sử dụng màn hình là một vấn đề lớn... Bạn có thể dành nhiều giờ để nhìn vào màn hình máy tính mà quên đi việc nghỉ ngơi cho mắt...</p>', N'Thời gian sử dụng màn hình là một vấn đề lớn... Bạn có thể dành nhiều giờ để nhìn vào màn hình máy tính mà quên đi việc nghỉ ngơi cho mắt...', '/images/blog/blog3.png', NULL, N'Admin', 200, 1, '2022-10-20', '2022-10-20'),
+(N'QUY TRÌNH BẢO HÀNH & ĐỔI TRẢ', N'<p>Các sản phẩm kính râm, gọng kính cận... được đổi mới trong vòng 12 tháng với các lỗi do nhà sản xuất, giúp bạn an tâm tuyệt đối…</p>', N'Các sản phẩm kính râm, gọng kính cận... được đổi mới trong vòng 12 tháng với các lỗi do nhà sản xuất, giúp bạn an tâm tuyệt đối…', '/images/blog/blog4.png', NULL, N'Admin', 150, 1, '2022-10-15', '2022-10-15'),
+(N'CHỌN KÍNH THEO KHUÔN MẶT', N'<p>Không chỉ là sản phẩm bảo vệ sức khoẻ... Một gọng kính phù hợp sẽ giúp bạn che khuyết điểm và tôn lên các đường nét sắc sảo của khuôn mặt...</p>', N'Không chỉ là sản phẩm bảo vệ sức khoẻ... Một gọng kính phù hợp sẽ giúp bạn che khuyết điểm và tôn lên các đường nét sắc sảo của khuôn mặt...', '/images/blog/blog5.jpg', NULL, N'Admin', 340, 1, '2022-10-10', '2022-10-10');
+GO

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +18,8 @@ namespace Model
         public string ghichu { get; set; }
         public DateTime thoigian { get; set; }
         public int tongtien { get; set; }
+        public int tien_giam { get; set; }
+        public string ma_km { get; set; }
         public string trangthai { get; set; }
         public List<DonhangChitiet> listjson_chitiet { get; set; } 
     }
@@ -43,6 +45,8 @@ namespace Model
         public string ghichu { get; set; }
         public DateTime thoigian { get; set; }
         public int tongtien { get; set; }
+        public int tien_giam { get; set; }
+        public string ma_km { get; set; }
         public string trangthai { get; set; }
         public List<ModelDonhangChitiet> listjson_chitiet { get; set; }
     }

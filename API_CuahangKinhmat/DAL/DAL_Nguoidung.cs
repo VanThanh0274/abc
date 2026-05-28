@@ -1,4 +1,4 @@
-﻿using DAL.Helper;
+using DAL.Helper;
 using DAL.Helper.Interface;
 using DAL.Interface;
 using Model;
@@ -160,6 +160,42 @@ namespace DAL
 
             return a;
 
+        }
+
+        public bool UpgradeVip(int id)
+        {
+            string msg = "";
+            try
+            {
+                var obj = db.writeProcedure(out msg, "sp_u_upgrade_vip", "@id", id);
+                if (!string.IsNullOrEmpty(msg))
+                {
+                    throw new Exception(msg);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int GetVipProgress(int id)
+        {
+            string msg = "";
+            try
+            {
+                var dt = db.Listobject(out msg, "sp_u_check_vip_progress", "@iduser", id);
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    return Convert.ToInt32(dt.Rows[0]["TongChiTieu"]);
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

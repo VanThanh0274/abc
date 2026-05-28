@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -87,6 +87,53 @@ namespace API_Kinhmat.Controllers
         {
             var list = bus.UpdateRole(id,role,state);
             return Ok(new {mess= "huy"});
+        }
+
+        [HttpPost]
+        [Route("UpgradeVip")]
+        [Authorize]
+        public IActionResult UpgradeVip()
+        {
+            var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (int.TryParse(userIdStr, out int userId))
+            {
+                try
+                {
+                    var success = bus.UpgradeVip(userId);
+                    if (success)
+                        return Ok(new { message = "Nâng cấp VIP thành công!" });
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(new { message = ex.Message });
+                }
+                return BadRequest(new { message = "Lỗi khi nâng cấp VIP." });
+            }
+            return Unauthorized(new { message = "Không xác định được người dùng." });
+        }
+
+        [HttpGet]
+        [Route("VipProgress")]
+        [Authorize]
+        public IActionResult VipProgress()
+        {
+            var userIdStr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (int.TryParse(userIdStr, out int userId))
+            {
+                int tongChiTieu = bus.GetVipProgress(userId);
+                int mucTieu = 5000000;
+                
+                var profile = bus.Getbyid(userId);
+                bool isVip = profile != null && profile.is_vip == 1;
+
+                return Ok(new 
+                { 
+                    tongChiTieu = tongChiTieu, 
+                    mucTieu = mucTieu, 
+                    isVip = isVip 
+                });
+            }
+            return Unauthorized(new { message = "Không xác định được người dùng." });
         }
     }
 }

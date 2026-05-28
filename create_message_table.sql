@@ -27,7 +27,7 @@ GO
 
 
 -- 2. Stored Procedure thêm tin nhắn mới
-CREATE OR ALTER PROC sp_message_create
+CREATE OR ALTER PROC sp_db_message_create
 (
     @iduser INT = NULL,
     @role VARCHAR(50),
@@ -42,7 +42,7 @@ GO
 
 
 -- 3. Stored Procedure lấy lịch sử hội thoại của người dùng
-CREATE OR ALTER PROC sp_message_get_history
+CREATE OR ALTER PROC sp_db_message_get_history
 (
     @iduser INT
 )
@@ -57,7 +57,7 @@ GO
 
 
 -- 4. Stored Procedure xóa lịch sử hội thoại
-CREATE OR ALTER PROC sp_message_clear_history
+CREATE OR ALTER PROC sp_db_message_clear_history
 (
     @iduser INT
 )

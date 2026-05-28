@@ -1,4 +1,4 @@
-﻿using Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +16,7 @@ namespace DAL.Interface
         public bool ChangePassword(string password, int id);
         public ResponseData<List<Nguoidung>> Getall(int page_number, int page_size);
         public bool UpdateRole(int id, string role, int state);
+        public bool UpgradeVip(int id);
+        public int GetVipProgress(int id);
     }
 }

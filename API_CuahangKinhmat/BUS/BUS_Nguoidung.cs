@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using DAL.Interface;
 using Model;
 using System;
@@ -81,6 +81,14 @@ namespace BUS
         public bool UpdateRole(int id, string role, int state)
         {
             return dal.UpdateRole(id, role, state);
+        }
+        public bool UpgradeVip(int id)
+        {
+            return dal.UpgradeVip(id);
+        }
+        public int GetVipProgress(int id)
+        {
+            return dal.GetVipProgress(id);
         }
     }
 }

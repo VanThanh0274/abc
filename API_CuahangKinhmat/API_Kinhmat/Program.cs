@@ -33,6 +33,26 @@ builder.Services.AddTransient<Idal_Thongke, DAL_Thongke>();
 builder.Services.AddTransient<Idal_Message, DAL_Message>();
 builder.Services.AddTransient<Ibus_Message, BUS_Message>();
 
+// Lịch sử giá - Price History
+builder.Services.AddTransient<IDAL_LichSuGia, DAL_LichSuGia>();
+builder.Services.AddTransient<IBUS_LichSuGia, BUS_LichSuGia>();
+
+// Hóa đơn nhập kho - Purchase Invoices
+builder.Services.AddTransient<IDAL_HoadonNhap, DAL_HoadonNhap>();
+builder.Services.AddTransient<IBUS_HoadonNhap, BUS_HoadonNhap>();
+
+// Hóa đơn xuất kho - Sales Invoices
+builder.Services.AddTransient<IDAL_HoadonXuat, DAL_HoadonXuat>();
+builder.Services.AddTransient<IBUS_HoadonXuat, BUS_HoadonXuat>();
+
+// Khuyến mãi
+builder.Services.AddTransient<IDAL_Khuyenmai, DAL_Khuyenmai>();
+builder.Services.AddTransient<IBUS_Khuyenmai, BUS_Khuyenmai>();
+
+// Blog
+builder.Services.AddTransient<IDAL_Blog, DAL_Blog>();
+builder.Services.AddTransient<IBUS_Blog, BUS_Blog>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

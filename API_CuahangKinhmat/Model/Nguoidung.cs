@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +17,9 @@ namespace Model
         public string role { get; set; }
         public string token { get; set; }
         public int trangthai { get; set; }
+        public int is_vip { get; set; }
 
-        public Nguoidung(int id, string username, string pass, string ten, string sdt, string email, string role, int trangthai)
+        public Nguoidung(int id, string username, string pass, string ten, string sdt, string email, string role, int trangthai, int is_vip)
         {
             this.id = id;
             this.username = username;
@@ -28,6 +29,7 @@ namespace Model
             this.email = email;
             this.role = role;
             this.trangthai = trangthai;
+            this.is_vip = is_vip;
         }
         public Nguoidung() { }
     }

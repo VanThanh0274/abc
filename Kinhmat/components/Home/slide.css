@@ -1,0 +1,48 @@
+/* Custom styling for slick slider to look premium and luxury */
+
+.custom-slider-center .slick-slide {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.4;
+    transform: scale(0.96);
+}
+
+.custom-slider-center .slick-center {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.custom-slider-center .slick-prev:before, 
+.custom-slider-center .slick-next:before {
+    color: #c5a880 !important;
+    font-size: 26px;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.custom-slider-center .slick-prev:hover:before, 
+.custom-slider-center .slick-next:hover:before {
+    opacity: 1;
+}
+
+.custom-slider-center .slick-dots li button:before {
+    color: #c5a880 !important;
+    opacity: 0.25;
+}
+
+.custom-slider-center .slick-dots li.slick-active button:before {
+    color: #c5a880 !important;
+    opacity: 0.9;
+}
+
+/* Products slider styles */
+#slidekinhs .huy {
+    background-color: transparent;
+    transition: all 0.25s ease-out;
+}
+
+#slidekinhs .slick-prev:before, 
+#slidekinhs .slick-next:before {
+    color: #c5a880 !important;
+    font-size: 22px;
+    opacity: 0.75;
+}
