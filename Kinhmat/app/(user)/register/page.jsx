@@ -5,8 +5,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from "react-toastify";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-// import { apiRegister } from '../../../services/login'; // Adjust import based on your actual API service
-
+import { apiRegister } from '../../../services/login';
 export default function RegisterPage() {
     const [formData, setFormData] = useState({
         username: '',
@@ -43,6 +42,25 @@ export default function RegisterPage() {
             return;
         }
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            toast.error("Email không hợp lệ!");
+            return;
+        }
+
+        if (formData.phone) {
+            const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+            if (!phoneRegex.test(formData.phone)) {
+                toast.error("Số điện thoại không hợp lệ!");
+                return;
+            }
+        }
+
+        if (formData.password.length < 6) {
+            toast.error("Mật khẩu phải có ít nhất 6 ký tự!");
+            return;
+        }
+
         if (formData.password !== formData.confirmPassword) {
             toast.error("Mật khẩu xác nhận không khớp!");
             return;
@@ -50,16 +68,26 @@ export default function RegisterPage() {
 
         setIsLoading(true);
         try {
-            // NOTE: Replace this mock delay with your actual API call
-            // const res = await apiRegister(formData);
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const userPayload = {
+                username: formData.username.trim(),
+                ten: formData.fullname.trim(),
+                email: formData.email.trim(),
+                sdt: formData.phone.trim(),
+                pass: formData.password,
+                role: "user",
+                trangthai: 1,
+                is_vip: 0
+            };
+
+            const res = await apiRegister(userPayload);
             
             toast.success("Đăng ký tài khoản thành công! Vui lòng đăng nhập.");
             router.push("/login");
             
         } catch (error) {
             console.error("Lỗi đăng ký:", error);
-            toast.error("Có lỗi xảy ra trong quá trình đăng ký. Vui lòng thử lại!");
+            const errorMsg = error.response?.data?.message || (typeof error.response?.data === 'string' ? error.response.data : "Tên đăng nhập hoặc email đã tồn tại!");
+            toast.error(errorMsg);
         } finally {
             setIsLoading(false);
         }

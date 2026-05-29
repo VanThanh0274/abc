@@ -198,6 +198,13 @@ namespace DAL
             }
         }
 
+        public Nguoidung GetByEmail(string email)
+        {
+            string msg = "";
+            var dt = db.Listobject(out msg, "sp_u_nguoidung_by_email", "@email", email);
+            return dt.ConvertTo<Nguoidung>().FirstOrDefault();
+        }
+
     }
     
 }

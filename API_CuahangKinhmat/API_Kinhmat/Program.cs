@@ -1,3 +1,4 @@
+using API_Kinhmat.Services;
 using BUS;
 using BUS.Interface;
 using DAL;
@@ -26,6 +27,7 @@ builder.Services.AddTransient<IDAL_kinhmat, DAL_Kinhmat>();
 builder.Services.AddTransient<Ibus_Kinhmat, BUS_Kinhmat>();
 builder.Services.AddTransient<Idal_Donhang, DAL_Donhang>();
 builder.Services.AddTransient<Ibus_Donhang, BUS_Donhang>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddTransient<Ibus_Nguoidung, BUS_Nguoidung>();
 builder.Services.AddTransient<Idal_Nguoidung, DAL_Nguoidung>();
 builder.Services.AddTransient<Ibus_Thongke, BUS_Thongke>();

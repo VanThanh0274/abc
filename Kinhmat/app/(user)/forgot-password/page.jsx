@@ -5,11 +5,13 @@ import { useRouter } from 'next/navigation';
 import { toast } from "react-toastify";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { apiForgotPassword } from '../../../services/login';
 
 export default function ForgotPasswordPage() {
     const [email, setEmail] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
     const [isSent, setIsSent] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [newPassword, setNewPassword] = useState("");
     const router = useRouter();
 
     useEffect(() => {
@@ -18,12 +20,12 @@ export default function ForgotPasswordPage() {
 
     const handleResetPassword = async (e) => {
         e.preventDefault();
-        
+
         if (!email.trim()) {
             toast.warn("Vui lòng nhập email của bạn!");
             return;
         }
-        
+
         // Basic email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
@@ -33,14 +35,16 @@ export default function ForgotPasswordPage() {
 
         setIsLoading(true);
         try {
-            // Mock API call - Replace with actual implementation later
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            toast.success("Hướng dẫn đặt lại mật khẩu đã được gửi đến email của bạn!");
+            const result = await apiForgotPassword(email);
+            toast.success(result?.message || "Tạo mật khẩu mới thành công!");
+            if (result?.newPassword) {
+                setNewPassword(result.newPassword);
+            }
             setIsSent(true);
         } catch (error) {
             console.error("Lỗi:", error);
-            toast.error("Có lỗi xảy ra. Vui lòng thử lại sau!");
+            const errorMsg = error.response?.data?.message || "Có lỗi xảy ra. Vui lòng thử lại sau!";
+            toast.error(errorMsg);
         } finally {
             setIsLoading(false);
         }
@@ -48,18 +52,18 @@ export default function ForgotPasswordPage() {
 
     return (
         <div className="min-h-screen bg-white flex font-sans">
-            
+
             {/* Left Side - Image Banner */}
             <div className="hidden lg:flex w-1/2 relative bg-gray-900 items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/50 z-10"></div>
-                <img 
-                    src="/images/sale.jpg" 
-                    alt="Luxury Eyewear" 
+                <img
+                    src="/images/sale.jpg"
+                    alt="Luxury Eyewear"
                     className="absolute inset-0 w-full h-full object-cover object-center scale-105"
                 />
-                
+
                 <div className="relative z-20 text-center px-12">
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
@@ -76,7 +80,7 @@ export default function ForgotPasswordPage() {
 
             {/* Right Side - Form */}
             <div className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 relative bg-gray-50 dark:bg-gray-900">
-                
+
                 <motion.div
                     className="w-full max-w-md"
                     initial={{ opacity: 0, x: 20 }}
@@ -89,14 +93,34 @@ export default function ForgotPasswordPage() {
                             <Sparkles size={28} />
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight mb-2">
-                            Quên mật khẩu?
+                            {isSent ? "Mật khẩu của bạn" : "Quên mật khẩu?"}
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 text-sm">
-                            Đừng lo lắng! Hãy nhập email bạn đã đăng ký, chúng tôi sẽ gửi hướng dẫn để bạn lấy lại mật khẩu.
+                            {isSent
+                                ? "Mật khẩu mới đã được tạo thành công. Vui lòng lưu lại và đăng nhập."
+                                : "Đừng lo lắng! Hãy nhập email bạn đã đăng ký để hệ thống cấp lại mật khẩu mới."}
                         </p>
                     </div>
 
-                    {!isSent ? (
+                    {isSent ? (
+                        <div className="space-y-6 text-center">
+                            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-6 mb-6">
+                                <p className="text-sm text-green-800 dark:text-green-300 mb-2">Mật khẩu mới của bạn là:</p>
+                                <div className="text-3xl font-mono font-bold text-green-600 dark:text-green-400 tracking-wider">
+                                    {newPassword}
+                                </div>
+                                <p className="text-xs text-gray-500 mt-4">
+                                    (Vui lòng sao chép mật khẩu này và đổi lại ngay sau khi đăng nhập)
+                                </p>
+                            </div>
+
+                            <Link href="/login">
+                                <button className="w-full py-3.5 rounded-xl text-black font-bold text-sm tracking-wider shadow-[0_0_20px_rgba(197,168,128,0.3)] hover:shadow-[0_0_30px_rgba(197,168,128,0.5)] bg-brand-gold hover:bg-yellow-500 transition-all duration-300">
+                                    QUAY LẠI ĐĂNG NHẬP
+                                </button>
+                            </Link>
+                        </div>
+                    ) : (
                         <form onSubmit={handleResetPassword} className="space-y-6">
                             <div className="space-y-2">
                                 <label className="text-xs font-bold tracking-wider text-gray-700 dark:text-gray-300 uppercase">
@@ -127,30 +151,16 @@ export default function ForgotPasswordPage() {
                                     {isLoading ? (
                                         <span className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
                                     ) : (
-                                        <>GỬI YÊU CẦU <Send size={16}/></>
+                                        <>GỬI YÊU CẦU <Send size={16} /></>
                                     )}
                                 </span>
                             </button>
                         </form>
-                    ) : (
-                        <motion.div 
-                            className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-6 rounded-2xl text-center space-y-4"
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                        >
-                            <div className="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
-                                <Send size={20} />
-                            </div>
-                            <h3 className="font-bold text-gray-900 dark:text-white text-lg">Kiểm tra Email của bạn</h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
-                                Chúng tôi đã gửi một email hướng dẫn lấy lại mật khẩu tới <span className="font-semibold">{email}</span>. Vui lòng kiểm tra hộp thư đến (và cả thư mục Spam).
-                            </p>
-                        </motion.div>
                     )}
 
                     <div className="mt-8 text-center">
-                        <Link 
-                            href="/login" 
+                        <Link
+                            href="/login"
                             className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-brand-gold transition-colors"
                         >
                             <ArrowLeft size={16} /> Trở về trang đăng nhập

@@ -18,5 +18,6 @@ namespace DAL.Interface
         public bool UpdateRole(int id, string role, int state);
         public bool UpgradeVip(int id);
         public int GetVipProgress(int id);
+        Nguoidung GetByEmail(string email);
     }
 }

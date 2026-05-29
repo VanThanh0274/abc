@@ -47,6 +47,7 @@ const PAYMENT_METHODS = [
 export default function Thanhtoan() {
   const [cart, setcart] = useState([]);
   const [tong, settong] = useState(0);
+  const [promo, setPromo] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -66,6 +67,9 @@ export default function Thanhtoan() {
       setcart(liststorage);
       const tong = liststorage.reduce((acc, item) => acc + item.tong, 0);
       settong(tong);
+      
+      const promoData = JSON.parse(localStorage.getItem("promo_data")) || null;
+      setPromo(promoData);
     };
     fetchdata();
   }, []);
@@ -366,10 +370,10 @@ export default function Thanhtoan() {
                   <span className="font-semibold text-gray-900">{tong.toLocaleString("vi-VN")} đ</span>
                 </div>
                 
-                {JSON.parse(localStorage.getItem("promo_data")) && (
+                {promo && (
                   <div className="flex justify-between items-center text-green-600">
-                    <span>Mã giảm giá ({JSON.parse(localStorage.getItem("promo_data")).ma_km})</span>
-                    <span className="font-semibold">- {JSON.parse(localStorage.getItem("promo_data")).tien_giam.toLocaleString("vi-VN")} đ</span>
+                    <span>Mã giảm giá ({promo.ma_km})</span>
+                    <span className="font-semibold">- {promo.tien_giam.toLocaleString("vi-VN")} đ</span>
                   </div>
                 )}
                 
@@ -381,7 +385,7 @@ export default function Thanhtoan() {
                 <div className="flex justify-between items-end">
                   <span className="text-base font-bold text-gray-900">Tổng cộng</span>
                   <span className="text-xl font-extrabold text-[#c5a880] tracking-wide">
-                    {cart.length > 0 ? (Math.max(0, tong - (JSON.parse(localStorage.getItem("promo_data"))?.tien_giam || 0)) + 30000).toLocaleString("vi-VN") : "0"} đ
+                    {cart.length > 0 ? (Math.max(0, tong - (promo?.tien_giam || 0)) + 30000).toLocaleString("vi-VN") : "0"} đ
                   </span>
                 </div>
               </div>

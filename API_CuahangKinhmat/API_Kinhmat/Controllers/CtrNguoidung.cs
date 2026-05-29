@@ -2,6 +2,9 @@ using BUS.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using API_Kinhmat.Services;
+using System;
+using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,9 +15,12 @@ namespace API_Kinhmat.Controllers
     public class CtrNguoidung : ControllerBase
     {
         private Ibus_Nguoidung bus;
-        public CtrNguoidung(Ibus_Nguoidung bus)
+        private readonly IEmailService _emailService;
+
+        public CtrNguoidung(Ibus_Nguoidung bus, IEmailService emailService)
         {
             this.bus = bus;
+            _emailService = emailService;
         }
         
         [HttpPost]
@@ -134,6 +140,50 @@ namespace API_Kinhmat.Controllers
                 });
             }
             return Unauthorized(new { message = "Không xác định được người dùng." });
+        }
+
+        public class ForgotPasswordModel
+        {
+            public string Email { get; set; }
+        }
+
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public IActionResult ForgotPassword([FromBody] ForgotPasswordModel model)
+        {
+            if (string.IsNullOrEmpty(model.Email))
+            {
+                return BadRequest(new { message = "Vui lòng cung cấp email." });
+            }
+
+            var user = bus.GetByEmail(model.Email);
+            if (user == null)
+            {
+                return BadRequest(new { message = "Email này chưa được đăng ký trong hệ thống!" });
+            }
+
+            // Tạo mật khẩu mới ngẫu nhiên (6 ký tự)
+            string newPassword = GenerateRandomPassword(6);
+
+            // Cập nhật vào DB
+            bool changed = bus.ChangePassword(newPassword, user.id);
+            if (changed)
+            {
+                return Ok(new { 
+                    message = "Tạo mật khẩu mới thành công!",
+                    newPassword = newPassword
+                });
+            }
+
+            return BadRequest(new { message = "Có lỗi khi cập nhật mật khẩu." });
+        }
+
+        private string GenerateRandomPassword(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

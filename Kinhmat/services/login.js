@@ -3,8 +3,19 @@ export const apiLogin = async (obj) => {
     const res = await api.post("/CtrNguoidung/login",obj);
     return res.data;
 }
+
+export const apiRegister = async (obj) => {
+    const res = await api.post("/CtrNguoidung/create", obj);
+    return res.data;
+}
+
 export const apiGetprofile_byid = async (id) => {
     const res = await api.get(`/CtrNguoidung/getbyid?id=${id}`);
+    return res.data;
+}
+
+export const apiForgotPassword = async (email) => {
+    const res = await api.post("/CtrNguoidung/ForgotPassword", { email });
     return res.data;
 }
 export const apiChangepassword = async (pass,id) => {

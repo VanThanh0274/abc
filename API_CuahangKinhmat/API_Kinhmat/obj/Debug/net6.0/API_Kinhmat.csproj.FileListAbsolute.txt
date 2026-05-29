@@ -452,3 +452,4 @@ D:\DATN_KinhMat\abc\API_CuahangKinhmat\API_Kinhmat\obj\Debug\net6.0\refint\API_K
 D:\DATN_KinhMat\abc\API_CuahangKinhmat\API_Kinhmat\obj\Debug\net6.0\API_Kinhmat.pdb
 D:\DATN_KinhMat\abc\API_CuahangKinhmat\API_Kinhmat\obj\Debug\net6.0\API_Kinhmat.genruntimeconfig.cache
 D:\DATN_KinhMat\abc\API_CuahangKinhmat\API_Kinhmat\obj\Debug\net6.0\ref\API_Kinhmat.dll
+D:\DATN_KinhMat\abc\API_CuahangKinhmat\API_Kinhmat\bin\Debug\net6.0\appsettings.example.json

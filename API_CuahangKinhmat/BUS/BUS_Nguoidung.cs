@@ -90,5 +90,10 @@ namespace BUS
         {
             return dal.GetVipProgress(id);
         }
+
+        public Nguoidung GetByEmail(string email)
+        {
+            return dal.GetByEmail(email);
+        }
     }
 }
