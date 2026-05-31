@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using DAL.Interface;
 using Model;
 using System;
@@ -55,6 +55,11 @@ namespace BUS
         public List<Kinhmat> FilterKinhmat(string chatlieu, string kieudang)
         {
             return dal.FilterKinhmat(chatlieu,kieudang);
+        }
+
+        public List<Kinhmat> GetRelated(int masp)
+        {
+            return dal.GetRelated(masp);
         }
     }
 }

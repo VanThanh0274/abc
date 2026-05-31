@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Security.Claims;
@@ -26,15 +25,25 @@ namespace BUS
             Secret = configuration["AppSettings:Secret"];
         }
 
-        
         public Nguoidung Login(string username, string password)
         {
-            var user = dal.GetUser(username, password);
-            // return null if user not found
+            var user = dal.GetUserByUsername(username);
             if (user == null)
                 return null;
 
-            // authentication successful so generate jwt token
+            bool isPasswordValid = false;
+            if (user.pass != null && user.pass.StartsWith("$2"))
+            {
+                isPasswordValid = BCrypt.Net.BCrypt.Verify(password, user.pass);
+            }
+            else
+            {
+                isPasswordValid = (user.pass == password);
+            }
+
+            if (!isPasswordValid)
+                return null;
+
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -42,25 +51,24 @@ namespace BUS
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
-
-                    new Claim(ClaimTypes.Name, user.ten.ToString()),
-                    new Claim(ClaimTypes.StreetAddress, user.email),
-                    new Claim(ClaimTypes.Role, user.role)
+                    new Claim(ClaimTypes.Name, user.ten?.ToString() ?? ""),
+                    new Claim(ClaimTypes.StreetAddress, user.email ?? ""),
+                    new Claim(ClaimTypes.Role, user.role.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             user.token = tokenHandler.WriteToken(token);
-
+            user.pass = null;
             return user;
-
         }
-        
+
         public bool Insert(Nguoidung nguoidung)
         {
             return dal.Insert(nguoidung);
         }
+
         public bool Update(Nguoidung nguoidung)
         {
             return dal.Update(nguoidung);
@@ -76,7 +84,6 @@ namespace BUS
         public ResponseData<List<Nguoidung>> Getall(int page_number, int page_size)
         {
             return dal.Getall(page_number, page_size);
-
         }
         public bool UpdateRole(int id, string role, int state)
         {
@@ -90,7 +97,6 @@ namespace BUS
         {
             return dal.GetVipProgress(id);
         }
-
         public Nguoidung GetByEmail(string email)
         {
             return dal.GetByEmail(email);

@@ -26,25 +26,13 @@ namespace DAL
                 "@username", user,
                 "@pass", pass);
             return obj.ConvertTo<Nguoidung>().FirstOrDefault();
-
-            //string query = $"select*from Nguoidung where username='{user}' and pass='{pass}'";
-            //var dt = db.ListObj(query);
-            //if(dt.Rows.Count == 1)
-            //{
-            //    var d = dt.Rows[0];
-            //    return new Nguoidung
-            //        (
-            //            int.Parse(d[0].ToString()),
-            //            d[1].ToString(),
-            //            d[2].ToString(),
-            //            d[3].ToString(),
-            //            d[4].ToString(),
-            //            d[5].ToString(),
-            //            d[6].ToString(),
-            //            int.Parse(d[7].ToString())
-            //        );
-            //}
-            //return null;
+        }
+        
+        public Nguoidung GetUserByUsername(string user)
+        {
+            string msg = "";
+            var obj = db.Listobject(out msg, "sp_getuser_by_username", "@username", user);
+            return obj.ConvertTo<Nguoidung>().FirstOrDefault();
         }
         public Nguoidung Getbyid(int id)
         {

@@ -1,4 +1,4 @@
-﻿using DAL.Helper;
+using DAL.Helper;
 using DAL.Helper.Interface;
 using DAL.Interface;
 using Model;
@@ -220,7 +220,13 @@ namespace DAL
                 "@KieudangList",kieudang);
 
             return dt.ConvertTo<Kinhmat>().ToList();
+        }
 
+        public List<Kinhmat> GetRelated(int masp)
+        {
+            string msg = "";
+            var dt = db.Listobject(out msg, "sp_kinhmat_get_related", "@masp", masp);
+            return dt.ConvertTo<Kinhmat>().ToList();
         }
     }
 }

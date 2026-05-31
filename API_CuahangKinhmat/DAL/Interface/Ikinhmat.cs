@@ -1,4 +1,4 @@
-﻿using Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +19,6 @@ namespace DAL.Interface
         public ResponseData<List<Kinhmat>> Search(string ten, int page_number, int page_size);
         public List<Kinhmat> Getallgioithieu(string gioithieu);
         public List<Kinhmat> FilterKinhmat(string chatlieu, string kieudang);
+        public List<Kinhmat> GetRelated(int masp);
     }
 }

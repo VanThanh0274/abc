@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
@@ -10,12 +10,15 @@ namespace API_Kinhmat.Controllers.Controllers_users
     [ApiController]
     public class Ctr_Donhang_user : ControllerBase
     {
-        // GET: api/<Ctr_Donhang_user>
         private Ibus_Donhang bus;
-        public Ctr_Donhang_user(Ibus_Donhang bus)
+        private Ibus_Giohang busGiohang;
+        
+        public Ctr_Donhang_user(Ibus_Donhang bus, Ibus_Giohang busGiohang)
         {
             this.bus = bus;
+            this.busGiohang = busGiohang;
         }
+
         [HttpPost]
         [Route("Insert")]
         public IActionResult Insert([FromBody] Donhang model)
@@ -23,6 +26,8 @@ namespace API_Kinhmat.Controllers.Controllers_users
             var result = bus.Insert(model);
             if (result == "1")
             {
+                // Xóa giỏ hàng sau khi đặt hàng thành công
+                busGiohang.Clear(model.iduser);
                 return Ok(new { status = 200, message = "Thành công" });
             }
             else

@@ -55,6 +55,18 @@ builder.Services.AddTransient<IBUS_Khuyenmai, BUS_Khuyenmai>();
 builder.Services.AddTransient<IDAL_Blog, DAL_Blog>();
 builder.Services.AddTransient<IBUS_Blog, BUS_Blog>();
 
+// Danh gia
+builder.Services.AddTransient<Idal_Danhgia, DAL_Danhgia>();
+builder.Services.AddTransient<Ibus_Danhgia, BUS_Danhgia>();
+
+// Giohang
+builder.Services.AddTransient<Idal_Giohang, DAL_Giohang>();
+builder.Services.AddTransient<Ibus_Giohang, BUS_Giohang>();
+
+// Voucher
+builder.Services.AddTransient<Idal_Voucher, DAL_Voucher>();
+builder.Services.AddTransient<Ibus_Voucher, BUS_Voucher>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

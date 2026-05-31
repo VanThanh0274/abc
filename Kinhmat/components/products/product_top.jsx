@@ -37,10 +37,16 @@ export default function ProductTop() {
     setQuantity(quantity + 1);
   };
 
-  const addToCart = () => {
+  const addToCart = async () => {
     if (!product) return;
 
-    let sanphams = JSON.parse(localStorage.getItem("sanphams")) || [];
+    let sanphams = [];
+    try {
+      sanphams = JSON.parse(localStorage.getItem("sanphams")) || [];
+      if (!Array.isArray(sanphams)) sanphams = [];
+    } catch (e) {
+      sanphams = [];
+    }
     const giaNumber = Number(product.giaban);
     const tong = giaNumber * quantity;
     const sptontai = sanphams.find(item => item.id === product.id);
@@ -60,6 +66,12 @@ export default function ProductTop() {
       };
       sanphams.push(sp);
       toast.success("Thêm sản phẩm vào giỏ hàng thành công!");
+    }
+    
+    const token = localStorage.getItem('token');
+    if (token) {
+        const { addToCartDB } = await import("../../services/cartService");
+        await addToCartDB(product.id, quantity);
     }
 
     localStorage.setItem("sanphams", JSON.stringify(sanphams));

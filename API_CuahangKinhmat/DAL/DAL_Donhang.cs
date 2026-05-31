@@ -1,4 +1,4 @@
-﻿using DAL.Helper;
+using DAL.Helper;
 using DAL.Helper.Interface;
 using DAL.Interface;
 using Model;
@@ -133,7 +133,9 @@ namespace DAL
                     "@diachi", model.diachi,
                     "@ghichu", model.ghichu,
                     "@thoigian", model.thoigian,
-                    "@Data", MessageConvert.SerializeObject(model.listjson_chitiet));
+                    "@Data", MessageConvert.SerializeObject(model.listjson_chitiet),
+                    "@idVoucher", model.idVoucher ?? (object)DBNull.Value,
+                    "@tien_giam", model.tien_giam);
 
                 if (!string.IsNullOrEmpty(msgError))
                 {

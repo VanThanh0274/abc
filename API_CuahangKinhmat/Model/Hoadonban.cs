@@ -20,6 +20,7 @@ namespace Model
         public int tongtien { get; set; }
         public int tien_giam { get; set; }
         public string ma_km { get; set; }
+        public int? idVoucher { get; set; }
         public string trangthai { get; set; }
         public List<DonhangChitiet> listjson_chitiet { get; set; } 
     }

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { apiChangepassword } from "../../../../services/login";
-import { getId } from "../../../../services/auth";
+import { Getiduser } from "../../../../services/auth";
 
 export default function ChangePasswordPage() {
     const [currentPassword, setCurrentPassword] = useState("");
@@ -21,7 +21,7 @@ export default function ChangePasswordPage() {
     useEffect(() => {
         document.title = "Đổi mật khẩu | Kính Mắt Luxury";
         // Ensure user is logged in
-        const id = getId();
+        const id = Getiduser();
         if (!id) {
             toast.error("Vui lòng đăng nhập để đổi mật khẩu!");
             router.push("/login");
@@ -48,7 +48,7 @@ export default function ChangePasswordPage() {
 
         setIsLoading(true);
         try {
-            const id = getId();
+            const id = Getiduser();
             // Note: The backend currently only changes the password without verifying the old one.
             // If the backend `sp_u_change_password` requires old password, it would be passed here.
             // For now, we use apiChangepassword(newPassword, id) based on current backend implementation.

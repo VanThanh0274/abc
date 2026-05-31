@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
@@ -63,6 +63,14 @@ namespace API_Kinhmat.Controllers.Controllers_users
 
                 return Ok(new { mess = "Ko có" });
             }
+            return Ok(list);
+        }
+
+        [HttpGet]
+        [Route("Related/{id}")]
+        public IActionResult Related(int id)
+        {
+            var list = bus.GetRelated(id);
             return Ok(list);
         }
     }

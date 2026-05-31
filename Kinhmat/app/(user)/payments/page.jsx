@@ -120,6 +120,7 @@ export default function Thanhtoan() {
       tongtien: finalTotal,
       tien_giam: promo.tien_giam,
       ma_km: promo.ma_km,
+      idVoucher: promo.idVoucher || null,
       trangthai: "Chờ xác nhận",
       listjson_chitiet,
     };

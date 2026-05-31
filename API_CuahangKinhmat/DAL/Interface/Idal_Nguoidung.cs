@@ -10,6 +10,7 @@ namespace DAL.Interface
     public interface Idal_Nguoidung
     {
         Nguoidung GetUser(string user, string pass);
+        Nguoidung GetUserByUsername(string user);
         bool Insert(Nguoidung nguoidung);
         public bool Update(Nguoidung nguoidung);
         public Nguoidung Getbyid(int id);

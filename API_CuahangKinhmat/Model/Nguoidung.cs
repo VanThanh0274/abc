@@ -18,8 +18,10 @@ namespace Model
         public string token { get; set; }
         public int trangthai { get; set; }
         public int is_vip { get; set; }
+        public DateTime? NgayTao { get; set; }
+        public DateTime? NgayCapNhat { get; set; }
 
-        public Nguoidung(int id, string username, string pass, string ten, string sdt, string email, string role, int trangthai, int is_vip)
+        public Nguoidung(int id, string username, string pass, string ten, string sdt, string email, string role, int trangthai, int is_vip, DateTime? ngayTao = null, DateTime? ngayCapNhat = null)
         {
             this.id = id;
             this.username = username;
@@ -30,6 +32,8 @@ namespace Model
             this.role = role;
             this.trangthai = trangthai;
             this.is_vip = is_vip;
+            this.NgayTao = ngayTao;
+            this.NgayCapNhat = ngayCapNhat;
         }
         public Nguoidung() { }
     }

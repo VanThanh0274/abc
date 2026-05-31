@@ -11,7 +11,8 @@ import {
   Tag, 
   ArrowLeft, 
   ChevronRight,
-  Sparkles
+  Sparkles,
+  CheckCircle
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
@@ -23,23 +24,69 @@ export default function Cart() {
   const router = useRouter();
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("sanphams")) || [];
-    setCartItems(stored);
+    const fetchCart = async () => {
+      const token = localStorage.getItem('token');
+      if (token) {
+        const { getCartDB } = await import("../../../services/cartService");
+        const dbCart = await getCartDB();
+        if (dbCart) {
+          // Map dbCart fields to match local storage structure for compatibility
+          const mappedCart = dbCart.map(item => ({
+            id: item.masp,
+            ten: item.tenSanPham,
+            gia: item.giaBan,
+            soluong: item.soluong,
+            tong: item.tongTien,
+            anh: item.anh
+          }));
+          setCartItems(mappedCart);
+          // Sync with local storage
+          localStorage.setItem("sanphams", JSON.stringify(mappedCart));
+          window.dispatchEvent(new Event('localStorageUpdated'));
+        }
+      } else {
+        let stored = [];
+        try {
+          stored = JSON.parse(localStorage.getItem("sanphams")) || [];
+          if (!Array.isArray(stored)) stored = [];
+        } catch (e) {
+          stored = [];
+        }
+        setCartItems(stored);
+      }
+    };
+    fetchCart();
   }, [reload]);
 
-  const updateQuantity = (index, delta) => {
+  const updateQuantity = async (index, delta) => {
     const updatedCart = [...cartItems];
-    updatedCart[index].soluong = Math.max(1, updatedCart[index].soluong + delta);
-    updatedCart[index].tong = updatedCart[index].soluong * updatedCart[index].gia;
+    const newQuantity = Math.max(1, updatedCart[index].soluong + delta);
+    updatedCart[index].soluong = newQuantity;
+    updatedCart[index].tong = newQuantity * updatedCart[index].gia;
+    
+    const token = localStorage.getItem('token');
+    if (token) {
+        const { updateCartDB } = await import("../../../services/cartService");
+        await updateCartDB(updatedCart[index].id, newQuantity);
+    }
+    
     setCartItems(updatedCart);
     localStorage.setItem("sanphams", JSON.stringify(updatedCart));
     window.dispatchEvent(new Event('localStorageUpdated'));
   };
 
-  const removeItem = (index) => {
+  const removeItem = async (index) => {
     const updatedCart = [...cartItems];
     const removedItemName = updatedCart[index].ten;
+    const removedId = updatedCart[index].id;
     updatedCart.splice(index, 1);
+    
+    const token = localStorage.getItem('token');
+    if (token) {
+        const { removeFromCartDB } = await import("../../../services/cartService");
+        await removeFromCartDB(removedId);
+    }
+    
     setCartItems(updatedCart);
     localStorage.setItem("sanphams", JSON.stringify(updatedCart));
     window.dispatchEvent(new Event('localStorageUpdated'));
@@ -71,53 +118,37 @@ export default function Cart() {
       toast.warn("Vui lòng nhập mã ưu đãi.");
       return;
     }
+    
+    const tamTinhHienTai = cartItems.reduce((total, item) => total + item.tong, 0);
+    
     try {
-        const { getPromotionByCode } = await import("../../../services/admin/promotions");
-        const { apiGetprofile_byid } = await import("../../../services/login");
-        const { Getiduser } = await import("../../../services/auth");
+        const { applyVoucher } = await import("../../../services/voucherService");
+        const res = await applyVoucher(couponCode.trim(), tamTinhHienTai);
         
-        const promo = await getPromotionByCode(couponCode);
-        if (!promo || promo.trangthai === 0) {
-            toast.info("Mã ưu đãi không hợp lệ hoặc đã hết hạn.");
-            return;
-        }
-
-        const tamTinhHienTai = cartItems.reduce((total, item) => total + item.tong, 0);
-        if (tamTinhHienTai < promo.dieukien_toithieu) {
-            toast.warn(`Đơn hàng phải đạt tối thiểu ${promo.dieukien_toithieu.toLocaleString()}đ để dùng mã này.`);
-            return;
-        }
-
-        if (promo.is_vip_only === 1) {
-            const userId = Getiduser();
-            if (!userId) {
-                toast.error("Vui lòng đăng nhập để sử dụng mã ưu đãi.");
-                return;
+        if (res.success) {
+            const promo = res.data;
+            let tienGiam = 0;
+            if (promo.phanTramGiam > 0) {
+                tienGiam = (tamTinhHienTai * promo.phanTramGiam) / 100;
+                if (tienGiam > promo.giamToiDa) tienGiam = promo.giamToiDa;
+            } else {
+                tienGiam = promo.giamToiDa;
             }
-            const profile = await apiGetprofile_byid(userId);
-            if (profile.is_vip !== 1) {
-                toast.error("Mã ưu đãi này chỉ dành cho khách hàng VIP.");
-                return;
-            }
-        }
 
-        let tienGiam = 0;
-        if (promo.loai_km === 1) {
-            tienGiam = (tamTinhHienTai * promo.giatri_km) / 100;
+            const promoData = {
+                idVoucher: promo.id,
+                ma_km: promo.maVoucher,
+                tien_giam: tienGiam,
+                loai_km: promo.phanTramGiam > 0 ? 1 : 2,
+                giatri_km: promo.phanTramGiam > 0 ? promo.phanTramGiam : promo.giamToiDa
+            };
+            
+            localStorage.setItem("promo_data", JSON.stringify(promoData));
+            setAppliedPromo(promoData);
+            toast.success("Áp dụng mã thành công!");
         } else {
-            tienGiam = promo.giatri_km;
+            toast.error(res.message);
         }
-
-        const promoData = {
-            ma_km: promo.ma_km,
-            tien_giam: tienGiam,
-            loai_km: promo.loai_km,
-            giatri_km: promo.giatri_km
-        };
-        localStorage.setItem("promo_data", JSON.stringify(promoData));
-        setAppliedPromo(promoData);
-        toast.success(`Áp dụng mã ${promo.ma_km} thành công! (Giảm ${tienGiam.toLocaleString()}đ)`);
-
     } catch (error) {
         toast.error("Không thể kiểm tra mã ưu đãi lúc này.");
     }
