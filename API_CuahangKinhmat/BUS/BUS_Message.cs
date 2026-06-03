@@ -166,7 +166,15 @@ namespace BUS
                 if (!response.IsSuccessStatusCode)
                 {
                     string errorContent = await response.Content.ReadAsStringAsync();
-                    return $"[Lỗi API Gemini - Status Code: {response.StatusCode}]: Yêu cầu kiểm tra khóa API trong appsettings.json. Chi tiết lỗi: {errorContent}";
+                    if (response.StatusCode == System.Net.HttpStatusCode.ServiceUnavailable || (int)response.StatusCode == 429)
+                    {
+                        return "Hệ thống chatbot (Gemini) hiện đang quá tải. Xin bạn vui lòng thử lại sau giây lát.";
+                    }
+                    if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized || response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                    {
+                        return $"[Lỗi xác thực]: Yêu cầu kiểm tra khóa API trong appsettings.json. Chi tiết lỗi: {errorContent}";
+                    }
+                    return $"[Lỗi API Gemini - Status Code: {response.StatusCode}]: Chi tiết lỗi: {errorContent}";
                 }
 
                 string responseJson = await response.Content.ReadAsStringAsync();

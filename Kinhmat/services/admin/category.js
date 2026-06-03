@@ -1,7 +1,7 @@
 import api from '../../utils/request'
 
 export const getAllCategory = async () => {
-  const res = await api.get('Ctr_Danhmuc/Get-all');
+  const res = await api.get(`Ctr_Danhmuc/Get-all?_t=${new Date().getTime()}`);
   return res.data;
 };
 export const searchCategory = async (danhmuc) => {

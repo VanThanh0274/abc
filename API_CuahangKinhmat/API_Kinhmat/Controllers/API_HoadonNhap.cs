@@ -65,6 +65,32 @@ namespace API_Kinhmat.Controllers
             catch (Exception ex) { return BadRequest(ex.Message); }
         }
 
+        /// <summary>
+        /// Cập nhật hóa đơn nhập kho chưa duyệt
+        /// </summary>
+        [HttpPut("Update/{mahdn}")]
+        public IActionResult Update(int mahdn, [FromBody] HoadonNhap model)
+        {
+            try
+            {
+                model.mahdn = mahdn;
+                bus.Update(model);
+
+                // Thêm từng dòng chi tiết nếu có
+                if (model.chitiet != null && model.chitiet.Count > 0)
+                {
+                    foreach (var item in model.chitiet)
+                    {
+                        item.mahdn = mahdn;
+                        bus.AddChitiet(item);
+                    }
+                }
+
+                return Ok(new { message = "Cập nhật hóa đơn nhập thành công" });
+            }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+        }
+
         /// <summary>Thêm một dòng chi tiết hàng vào hóa đơn nhập đã tồn tại</summary>
         [HttpPost("Add-chitiet")]
         public IActionResult AddChitiet([FromBody] HoadonNhapChitiet chitiet)
@@ -90,3 +116,5 @@ namespace API_Kinhmat.Controllers
         }
     }
 }
+
+

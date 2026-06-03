@@ -1,4 +1,4 @@
-Ôªøusing BUS.Interface;
+using BUS.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -10,7 +10,7 @@ namespace API_Kinhmat.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,admin")]
     public class Ctr_Kinhmat : ControllerBase
     {
         private Ibus_Kinhmat _bus;
@@ -71,11 +71,11 @@ namespace API_Kinhmat.Controllers
                 }
 
                 string url = $"{Request.Scheme}://{Request.Host}/images/product/{file.FileName}";
-                return Ok(new { Message = "Th√†nh c√¥ng", url });
+                return Ok(new { Message = "Th‡nh cÙng", url });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Kh√¥ng t√¨m th√¢y \n {ex.Message}");
+                return StatusCode(500, $"KhÙng tÏm th‚y \n {ex.Message}");
             }
         }
         [HttpGet]

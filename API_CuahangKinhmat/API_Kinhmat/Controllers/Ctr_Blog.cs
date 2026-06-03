@@ -31,7 +31,7 @@ namespace API_Kinhmat.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         [HttpPost("CreateDanhmuc")]
         public IActionResult CreateDanhmuc([FromBody] DanhMucBlog model)
         {
@@ -46,7 +46,7 @@ namespace API_Kinhmat.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         [HttpDelete("DeleteDanhmuc")]
         public IActionResult DeleteDanhmuc(int id)
         {
@@ -90,7 +90,7 @@ namespace API_Kinhmat.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         [HttpPost("Create")]
         public IActionResult Create([FromBody] Blog model)
         {
@@ -105,7 +105,7 @@ namespace API_Kinhmat.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         [HttpPut("Update")]
         public IActionResult Update([FromBody] Blog model)
         {
@@ -120,7 +120,7 @@ namespace API_Kinhmat.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         [HttpDelete("Delete")]
         public IActionResult Delete(int id)
         {
@@ -163,7 +163,7 @@ namespace API_Kinhmat.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         [HttpPost("UploadImage")]
         public IActionResult UploadImage()
         {

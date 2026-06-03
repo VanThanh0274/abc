@@ -94,6 +94,7 @@ export default function ProductsPage() {
               <th>Username</th>
               <th>Tên</th>
               <th>Quyền</th>
+              <th>Hạng Thành Viên</th>
               <th>Trạng thái</th>
               <th>Thao tác</th>
             </tr>
@@ -105,10 +106,12 @@ export default function ProductsPage() {
                   <td>{item + 1}</td>
                   <td>{user.username}</td>
                   <td>{user.ten}</td>
+                  <td>{user.role}</td>
                   <td>
-                    {user.role} 
-                    {user.is_vip === 1 && (
-                      <span style={{marginLeft: '8px', padding: '2px 6px', background: '#FFD700', color: '#B8860B', borderRadius: '4px', fontSize: '12px', fontWeight: 'bold'}}>VIP</span>
+                    {user.is_vip === 1 ? (
+                      <span style={{padding: '4px 8px', background: '#FFDF00', color: '#8B6508', borderRadius: '6px', fontSize: '13px', fontWeight: 'bold'}}>Thành viên VIP</span>
+                    ) : (
+                      <span style={{padding: '4px 8px', background: '#E0E0E0', color: '#616161', borderRadius: '6px', fontSize: '13px', fontWeight: 'bold'}}>Thành viên Thường</span>
                     )}
                   </td>
                   <td>

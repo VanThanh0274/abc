@@ -7,6 +7,7 @@ import {
   getAllHoadonNhap, 
   getHoadonNhapChitiet, 
   createHoadonNhap, 
+  updateHoadonNhap,
   confirmHoadonNhap, 
   getAllSuppliers 
 } from '../../../services/admin/invoice';
@@ -46,6 +47,10 @@ export default function ImportPage() {
   const [invoiceDetails, setInvoiceDetails] = useState([]);
   const [detailsLoading, setDetailsLoading] = useState(false);
 
+  // Edit Mode States
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [editInvoiceId, setEditInvoiceId] = useState(null);
+
   // New Invoice Form
   const [form, setForm] = useState({
     mancc: '',
@@ -54,12 +59,11 @@ export default function ImportPage() {
     items: [] // { masp, tensp, soluong, gianhap }
   });
   
-  // Temp item inputs
   const [tempItem, setTempItem] = useState({
-    masp: '',
     soluong: '',
     gianhap: ''
   });
+  const [productSearch, setProductSearch] = useState('');
 
   const [saving, setSaving] = useState(false);
 
@@ -102,6 +106,33 @@ export default function ImportPage() {
     }
   };
 
+  const handleOpenEdit = async (invoice) => {
+    setIsEditMode(true);
+    setEditInvoiceId(invoice.mahdn);
+    setForm({
+      mancc: invoice.mancc.toString(),
+      nguoinhap: invoice.nguoinhap,
+      ghichu: invoice.ghichu || '',
+      items: []
+    });
+    setShowDetailModal(false);
+    setShowCreateModal(true);
+    try {
+      const details = await getHoadonNhapChitiet(invoice.mahdn);
+      setForm(f => ({
+        ...f,
+        items: details.map(d => ({
+          masp: d.masp,
+          tensp: d.tensp || `SP #${d.masp}`,
+          soluong: d.soluong,
+          gianhap: d.gianhap
+        }))
+      }));
+    } catch {
+      toast.error('Không tải được chi tiết để sửa.');
+    }
+  };
+
   const handleConfirmInvoice = async (mahdn) => {
     if (!window.confirm('Xác nhận duyệt nhập kho? Hành động này sẽ cộng trực tiếp sản phẩm vào tồn kho hệ thống và không thể hoàn tác.')) return;
     try {
@@ -116,22 +147,31 @@ export default function ImportPage() {
   };
 
   const addTempItem = () => {
-    if (!tempItem.masp || !tempItem.soluong || !tempItem.gianhap) {
+    if (!productSearch || !tempItem.soluong || !tempItem.gianhap) {
       return toast.warn('Vui lòng điền đủ Sản phẩm, Số lượng và Giá nhập!');
     }
+
+    // Extract masp from format "123 - Product Name"
+    const match = productSearch.match(/^(\d+)\s*-/);
+    const masp = match ? parseInt(match[1], 10) : null;
+
+    if (!masp) {
+      return toast.warn('Vui lòng chọn sản phẩm hợp lệ từ danh sách!');
+    }
+
     if (tempItem.soluong <= 0 || tempItem.gianhap <= 0) {
       return toast.warn('Số lượng và Giá nhập phải lớn hơn 0!');
     }
 
     // Check if duplicate
-    if (form.items.some(x => x.masp === +tempItem.masp)) {
+    if (form.items.some(x => x.masp === masp)) {
       return toast.warn('Sản phẩm này đã có trong danh sách nhập!');
     }
 
-    const prod = products.find(p => p.id === +tempItem.masp);
+    const prod = products.find(p => p.id === masp);
     const newItem = {
-      masp: +tempItem.masp,
-      tensp: prod ? prod.ten : `SP #${tempItem.masp}`,
+      masp: masp,
+      tensp: prod ? prod.ten : `SP #${masp}`,
       soluong: +tempItem.soluong,
       gianhap: +tempItem.gianhap
     };
@@ -141,8 +181,8 @@ export default function ImportPage() {
       items: [...f.items, newItem]
     }));
 
+    setProductSearch('');
     setTempItem({
-      masp: '',
       soluong: '',
       gianhap: ''
     });
@@ -177,8 +217,13 @@ export default function ImportPage() {
         }))
       };
 
-      await createHoadonNhap(submitData);
-      toast.success('Lập phiếu nhập kho thành công! Trạng thái: Chờ duyệt.');
+      if (isEditMode) {
+        await updateHoadonNhap(editInvoiceId, submitData);
+        toast.success('Cập nhật phiếu nhập kho thành công!');
+      } else {
+        await createHoadonNhap(submitData);
+        toast.success('Lập phiếu nhập kho thành công! Trạng thái: Chờ duyệt.');
+      }
       setShowCreateModal(false);
       setForm({ mancc: '', nguoinhap: '', ghichu: '', items: [] });
       loadData();
@@ -214,7 +259,12 @@ export default function ImportPage() {
           </p>
         </div>
         <button
-          onClick={() => setShowCreateModal(true)}
+          onClick={() => {
+            setIsEditMode(false);
+            setEditInvoiceId(null);
+            setForm({ mancc: '', nguoinhap: '', ghichu: '', items: [] });
+            setShowCreateModal(true);
+          }}
           className="flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-hover text-white text-sm font-bold px-5 py-2.5 rounded-xl transition shadow-md shadow-brand-gold/10"
         >
           <Plus className="w-4 h-4" /> Lập phiếu nhập
@@ -320,7 +370,7 @@ export default function ImportPage() {
 
               <div className="border-b border-gray-150 pb-4">
                 <h2 className="text-xl font-extrabold font-heading text-brand-dark flex items-center gap-2">
-                  <FileText className="text-brand-gold" /> Lập Phiếu Nhập Kho Mới
+                  <FileText className="text-brand-gold" /> {isEditMode ? 'Cập Nhật Phiếu Nhập Kho' : 'Lập Phiếu Nhập Kho Mới'}
                 </h2>
                 <p className="text-xs text-gray-500 mt-1">Trạng thái mặc định: Chờ duyệt. Cần Admin xác nhận để hoàn tất nhập kho.</p>
               </div>
@@ -369,18 +419,20 @@ export default function ImportPage() {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-                  <div className="md:col-span-6">
-                    <label className="text-[10px] font-black text-gray-500 uppercase mb-1.5 block">Chọn sản phẩm</label>
-                    <select 
-                      value={tempItem.masp} 
-                      onChange={e => setTempItem(t => ({ ...t, masp: e.target.value }))}
+                  <div className="md:col-span-6 relative">
+                    <label className="text-[10px] font-black text-gray-500 uppercase mb-1.5 block">Chọn sản phẩm (Gõ để tìm kiếm)</label>
+                    <input 
+                      list="product-list"
+                      placeholder="Nhập tên hoặc mã SP..."
+                      value={productSearch} 
+                      onChange={e => setProductSearch(e.target.value)}
                       className="w-full bg-white border border-gray-200 rounded-xl px-3 py-2 text-xs font-semibold outline-none focus:border-brand-gold"
-                    >
-                      <option value="">-- Chọn sản phẩm kính mắt --</option>
+                    />
+                    <datalist id="product-list">
                       {products.map(p => (
-                        <option key={p.id} value={p.id}>{p.ten} (Hiện tại: {p.soluong || 0} cái)</option>
+                        <option key={p.id} value={`${p.id} - ${p.ten}`}>Kho: {p.soluong || 0} cái</option>
                       ))}
-                    </select>
+                    </datalist>
                   </div>
                   <div className="md:col-span-2">
                     <label className="text-[10px] font-black text-gray-500 uppercase mb-1.5 block">Số lượng</label>
@@ -470,7 +522,7 @@ export default function ImportPage() {
                     disabled={saving}
                     className="bg-brand-gold hover:bg-brand-gold-hover text-white px-6 py-2.5 rounded-xl text-xs font-bold transition disabled:opacity-60"
                   >
-                    {saving ? 'Đang lưu...' : 'Lưu phiếu nhập'}
+                    {saving ? 'Đang lưu...' : (isEditMode ? 'Lưu cập nhật' : 'Lưu phiếu nhập')}
                   </button>
                 </div>
               </div>
@@ -590,12 +642,20 @@ export default function ImportPage() {
                     Đóng
                   </button>
                   {selectedInvoice.trangthai === 0 && (
-                    <button 
-                      onClick={() => handleConfirmInvoice(selectedInvoice.mahdn)}
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-md shadow-emerald-600/10 flex items-center gap-1.5"
-                    >
-                      <ShieldCheck className="w-4 h-4" /> Duyệt nhập kho
-                    </button>
+                    <>
+                      <button 
+                        onClick={() => handleOpenEdit(selectedInvoice)}
+                        className="bg-brand-gold hover:bg-brand-gold-hover text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-md shadow-brand-gold/10"
+                      >
+                        Sửa Phiếu Nhập
+                      </button>
+                      <button 
+                        onClick={() => handleConfirmInvoice(selectedInvoice.mahdn)}
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold transition shadow-md shadow-emerald-600/10 flex items-center gap-1.5"
+                      >
+                        <ShieldCheck className="w-4 h-4" /> Duyệt nhập kho
+                      </button>
+                    </>
                   )}
                 </div>
               </div>
@@ -606,3 +666,5 @@ export default function ImportPage() {
     </div>
   );
 }
+
+

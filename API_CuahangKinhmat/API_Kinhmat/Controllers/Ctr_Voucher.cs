@@ -31,7 +31,6 @@ namespace API_Kinhmat.Controllers
         }
 
         [HttpGet("apply")]
-        [Authorize]
         public IActionResult ApplyVoucher(string code, decimal total)
         {
             try

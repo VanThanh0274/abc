@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -10,7 +10,7 @@ namespace API_Kinhmat.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,admin")]
     public class CtrDonhang : ControllerBase
     {
         Ibus_Donhang bus;
@@ -42,14 +42,14 @@ namespace API_Kinhmat.Controllers
                 var model = bus.Getbyid(mahd);
                 if(model == null)
                 {
-                    return BadRequest(new { mess = "Không tìm thấy" });
+                    return BadRequest(new { mess = "Kh�ng t�m th?y" });
                 }
 
                 return Ok(model);
 
             }catch (Exception ex)
             {
-                return BadRequest("ko thể thêm"+ex.Message);
+                return BadRequest("ko th? th�m"+ex.Message);
             }
             
         }
@@ -58,7 +58,7 @@ namespace API_Kinhmat.Controllers
         public IActionResult Insert([FromBody] Donhang model)
         {
             var result = bus.Insert(model);
-            if (result == "Thêm đơn hàng thành công.")
+            if (result == "Th�m don h�ng th�nh c�ng.")
             {
                 return Ok(new { status = 200, message = result });
             }
@@ -76,15 +76,15 @@ namespace API_Kinhmat.Controllers
 
                 if (bus.Update(trangthai, mahd))
                 {
-                    return Ok(new {mess="Thành công"});
+                    return Ok(new {mess="Th�nh c�ng"});
                 }
-                return BadRequest("Cập nhật trạng thái không thành công.");
+                return BadRequest("C?p nh?t tr?ng th�i kh�ng th�nh c�ng.");
 
             }
             catch (Exception ex)
             {
-                // Ghi log lỗi tại đây nếu cần thiết
-                return StatusCode(500, $"Lỗi hệ thống: {ex.Message}");
+                // Ghi log l?i t?i d�y n?u c?n thi?t
+                return StatusCode(500, $"L?i h? th?ng: {ex.Message}");
             }
         }
         [HttpGet]
@@ -106,12 +106,12 @@ namespace API_Kinhmat.Controllers
                     return Ok(model);
                 }
 
-                return BadRequest("Không thể chèn thông tin vận chuyển.");
+                return BadRequest("Kh�ng th? ch�n th�ng tin v?n chuy?n.");
             }
             catch (Exception ex)
             {
-                // Ghi log lỗi tại đây nếu cần thiết
-                return StatusCode(500, $"Lỗi hệ thống: {ex.Message}");
+                // Ghi log l?i t?i d�y n?u c?n thi?t
+                return StatusCode(500, $"L?i h? th?ng: {ex.Message}");
             }
         }
         [HttpPut]
@@ -123,15 +123,15 @@ namespace API_Kinhmat.Controllers
 
                 if (bus.UpdateVanchuyen(mavandon))
                 {
-                    return Ok(new { mess = "Thành công" });
+                    return Ok(new { mess = "Th�nh c�ng" });
                 }
-                return BadRequest("Đơn hàng chưa được hoàn thành");
+                return BadRequest("�on h�ng chua du?c ho�n th�nh");
 
             }
             catch (Exception ex)
             {
-                // Ghi log lỗi tại đây nếu cần thiết
-                return StatusCode(500, $"Lỗi hệ thống: {ex.Message}");
+                // Ghi log l?i t?i d�y n?u c?n thi?t
+                return StatusCode(500, $"L?i h? th?ng: {ex.Message}");
             }
         }
 

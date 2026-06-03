@@ -28,6 +28,11 @@ export const createHoadonNhap = async (data) => {
   return res.data;
 };
 
+export const updateHoadonNhap = async (mahdn, data) => {
+  const res = await api.put(`/API_HoadonNhap/Update/${mahdn}`, data);
+  return res.data;
+};
+
 export const confirmHoadonNhap = async (mahdn) => {
   const res = await api.put(`/API_HoadonNhap/Confirm/${mahdn}`);
   return res.data;

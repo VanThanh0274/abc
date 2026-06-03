@@ -1,4 +1,4 @@
-﻿using BUS;
+using BUS;
 using BUS.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

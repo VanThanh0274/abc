@@ -1,6 +1,7 @@
 'use client';
 
 import { getAllCategory } from '../../../services/admin/category';
+import { getAllSupplier } from '../../../services/admin/supplier';
 import { Createproduct, GetallProduct, Uploadimage, Getbyidproduct, Updateproduct, SearchProduct } from '../../../services/admin/product';
 import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
@@ -23,6 +24,7 @@ export default function Products() {
     const [showModal, setShowModal] = useState(false);
     const [listproduct, setlistproduct] = useState([]);
     const [listdanhmuc, setlistdanhmuc] = useState([]);
+    const [listnhacungcap, setlistnhacungcap] = useState([]);
     const [selectDanhmuc, setseclectDanhmuc] = useState(1);
 
     const [tongtrang, settongtrang] = useState(0);
@@ -219,6 +221,9 @@ export default function Products() {
             try {
                 const resdm = await getAllCategory();
                 setlistdanhmuc(resdm || []);
+
+                const resncc = await getAllSupplier();
+                setlistnhacungcap(resncc || []);
 
                 if (stateSearch) {
                     const res_search = await SearchProduct(inputSearch, (pageNumber + 1), 7);
@@ -486,28 +491,30 @@ export default function Products() {
 
                                     {/* Quantity */}
                                     <div className="space-y-1.5">
-                                        <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Số lượng nhập kho</label>
+                                        <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Số lượng tồn kho</label>
                                         <input 
                                             type="number" 
                                             name="soluong" 
-                                            placeholder="Số lượng nhập" 
-                                            onChange={handleInputChange} 
+                                            placeholder="0" 
+                                            disabled={true}
                                             value={product.soluong}
-                                            className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 placeholder-gray-455 focus:ring-1 focus:ring-brand-gold/30"
+                                            className="w-full bg-gray-100 border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium outline-none text-gray-500 cursor-not-allowed"
                                         />
+                                        <p className="text-[10px] text-gray-500 italic">* Số lượng tự động cập nhật từ Phiếu nhập kho</p>
                                     </div>
 
                                     {/* Cost Price */}
                                     <div className="space-y-1.5">
-                                        <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Giá nhập kho</label>
+                                        <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Giá nhập gần nhất</label>
                                         <input 
                                             type="number" 
                                             name="gianhap" 
-                                            placeholder="Giá nhập (đ)" 
-                                            onChange={handleInputChange} 
+                                            placeholder="0" 
+                                            disabled={true}
                                             value={product.gianhap}
-                                            className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 placeholder-gray-455 focus:ring-1 focus:ring-brand-gold/30"
+                                            className="w-full bg-gray-100 border border-gray-200 rounded-xl py-3 px-4 text-sm font-medium outline-none text-gray-500 cursor-not-allowed"
                                         />
+                                        <p className="text-[10px] text-gray-500 italic">* Giá nhập tự động lấy từ Hóa đơn nhập gần nhất</p>
                                     </div>
 
                                     {/* Sell Price */}
@@ -545,40 +552,73 @@ export default function Products() {
                                     {/* Material */}
                                     <div className="space-y-1.5">
                                         <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Chất liệu gọng kính</label>
-                                        <input 
-                                            type="text" 
-                                            name="chatlieu" 
-                                            placeholder="Ví dụ: Nhựa Acetate, Titan" 
-                                            onChange={handleInputChange} 
-                                            value={product.chatlieu}
-                                            className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 placeholder-gray-455 focus:ring-1 focus:ring-brand-gold/30"
-                                        />
+                                        <div className="relative flex items-center">
+                                            <select 
+                                                name="chatlieu" 
+                                                value={product.chatlieu} 
+                                                onChange={handleInputChange}
+                                                className="w-full bg-gray-50 border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 cursor-pointer appearance-none focus:ring-1 focus:ring-brand-gold/30"
+                                            >
+                                                <option value="" disabled className="bg-white text-gray-400">Chọn chất liệu</option>
+                                                <option value="Nhựa Acetate" className="bg-white text-gray-950">Nhựa Acetate</option>
+                                                <option value="Nhựa TR90" className="bg-white text-gray-950">Nhựa TR90</option>
+                                                <option value="Nhựa Ultem" className="bg-white text-gray-950">Nhựa Ultem</option>
+                                                <option value="Hợp kim" className="bg-white text-gray-950">Hợp kim</option>
+                                                <option value="Titanium" className="bg-white text-gray-950">Titanium</option>
+                                                <option value="Nhựa dẻo" className="bg-white text-gray-950">Nhựa dẻo</option>
+                                                <option value="Gỗ" className="bg-white text-gray-950">Gỗ</option>
+                                                <option value="Khác" className="bg-white text-gray-950">Khác</option>
+                                            </select>
+                                            <div className="absolute right-4 pointer-events-none border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-500"></div>
+                                        </div>
                                     </div>
 
                                     {/* Shape style */}
                                     <div className="space-y-1.5">
                                         <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Kiểu dáng</label>
-                                        <input 
-                                            type="text" 
-                                            name="kieudang" 
-                                            placeholder="Ví dụ: Phi công, Mắt mèo, Vuông" 
-                                            onChange={handleInputChange} 
-                                            value={product.kieudang}
-                                            className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 placeholder-gray-455 focus:ring-1 focus:ring-brand-gold/30"
-                                        />
+                                        <div className="relative flex items-center">
+                                            <select 
+                                                name="kieudang" 
+                                                value={product.kieudang} 
+                                                onChange={handleInputChange}
+                                                className="w-full bg-gray-50 border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 cursor-pointer appearance-none focus:ring-1 focus:ring-brand-gold/30"
+                                            >
+                                                <option value="" disabled className="bg-white text-gray-400">Chọn kiểu dáng</option>
+                                                <option value="Vuông" className="bg-white text-gray-950">Vuông</option>
+                                                <option value="Tròn" className="bg-white text-gray-950">Tròn</option>
+                                                <option value="Mắt mèo" className="bg-white text-gray-950">Mắt mèo</option>
+                                                <option value="Đa giác" className="bg-white text-gray-950">Đa giác</option>
+                                                <option value="Phi công (Aviator)" className="bg-white text-gray-950">Phi công (Aviator)</option>
+                                                <option value="Chữ nhật" className="bg-white text-gray-950">Chữ nhật</option>
+                                                <option value="Oval" className="bg-white text-gray-950">Oval</option>
+                                                <option value="Nửa gọng" className="bg-white text-gray-950">Nửa gọng</option>
+                                                <option value="Không gọng" className="bg-white text-gray-950">Không gọng</option>
+                                                <option value="Khác" className="bg-white text-gray-950">Khác</option>
+                                            </select>
+                                            <div className="absolute right-4 pointer-events-none border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-500"></div>
+                                        </div>
                                     </div>
 
                                     {/* Origin */}
                                     <div className="space-y-1.5">
-                                        <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Xuất xứ thương hiệu</label>
-                                        <input 
-                                            type="text" 
-                                            name="xuatxu" 
-                                            placeholder="Ví dụ: Italy, Japan, USA" 
-                                            onChange={handleInputChange} 
-                                            value={product.xuatxu}
-                                            className="w-full bg-gray-50 hover:bg-gray-100/50 focus:bg-white border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 placeholder-gray-455 focus:ring-1 focus:ring-brand-gold/30"
-                                        />
+                                        <label className="text-xs font-semibold text-brand-gold tracking-wide uppercase">Thương hiệu / Xuất xứ</label>
+                                        <div className="relative flex items-center">
+                                            <select 
+                                                name="xuatxu" 
+                                                value={product.xuatxu} 
+                                                onChange={handleInputChange}
+                                                className="w-full bg-gray-50 border border-gray-200 focus:border-brand-gold/60 rounded-xl py-3 px-4 text-sm font-medium outline-none transition-all duration-150 text-gray-900 cursor-pointer appearance-none focus:ring-1 focus:ring-brand-gold/30"
+                                            >
+                                                <option value="" disabled className="bg-white text-gray-400">Chọn thương hiệu / NCC</option>
+                                                {listnhacungcap.map((ncc) => (
+                                                    <option key={ncc.id} value={ncc.tenncc} className="bg-white text-gray-950">
+                                                        {ncc.tenncc}
+                                                    </option>
+                                                ))}
+                                                <option value="Khác" className="bg-white text-gray-950">Khác</option>
+                                            </select>
+                                            <div className="absolute right-4 pointer-events-none border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-500"></div>
+                                        </div>
                                     </div>
 
                                     {/* Description */}

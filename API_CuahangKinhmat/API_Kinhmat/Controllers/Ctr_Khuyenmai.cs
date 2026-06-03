@@ -33,7 +33,7 @@ namespace API_Kinhmat.Controllers
         }
 
         [HttpPost("Create")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         public IActionResult Create([FromBody] Khuyenmai model)
         {
             try
@@ -48,7 +48,7 @@ namespace API_Kinhmat.Controllers
         }
 
         [HttpPut("Update")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         public IActionResult Update([FromBody] Khuyenmai model)
         {
             try
@@ -63,7 +63,7 @@ namespace API_Kinhmat.Controllers
         }
 
         [HttpDelete("Delete/{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,admin")]
         public IActionResult Delete(int id)
         {
             try

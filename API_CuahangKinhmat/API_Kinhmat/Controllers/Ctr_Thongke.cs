@@ -1,4 +1,4 @@
-﻿using BUS.Interface;
+using BUS.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ namespace API_Kinhmat.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,admin")]
     public class Ctr_Thongke : ControllerBase
     {
         Ibus_Thongke bus;

@@ -44,11 +44,29 @@ namespace DAL
             {
                 var dt = sql.Listobject(out msg, "sp_hoadonnhap_create",
                     "@mancc", model.mancc,
-                    "@nguoinhap", model.nguoinhap,
+                    "@nguoinhap", model.nguoinhap ?? "",
                     "@ghichu", model.ghichu ?? "");
                 if (!string.IsNullOrEmpty(msg)) throw new Exception(msg);
-                var row = dt.ConvertTo<dynamic>().FirstOrDefault();
-                return row != null ? Convert.ToInt32(row.mahdn) : 0;
+                if (dt != null && dt.Rows.Count > 0)
+                    return Convert.ToInt32(dt.Rows[0]["mahdn"]);
+                return 0;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public bool Update(HoadonNhap model)
+        {
+            string msg = "";
+            try
+            {
+                var obj = sql.writeProcedure(out msg, "sp_hoadonnhap_update",
+                    "@mahdn", model.mahdn,
+                    "@mancc", model.mancc,
+                    "@nguoinhap", model.nguoinhap ?? "",
+                    "@ghichu", model.ghichu ?? "");
+                if ((obj != null && !string.IsNullOrEmpty(obj.ToString())) || !string.IsNullOrEmpty(msg))
+                    throw new Exception(Convert.ToString(obj) + msg);
+                return true;
             }
             catch (Exception ex) { throw ex; }
         }

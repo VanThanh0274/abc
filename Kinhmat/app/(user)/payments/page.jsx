@@ -6,6 +6,7 @@ import { createOrder } from "../../../services/order";
 import { createMomoPayment } from "../../../services/momo";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { apiVipProgress } from '../../../services/login';
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Sparkles,
@@ -57,6 +58,7 @@ export default function Thanhtoan() {
     diachi: "",
     ghichu: "",
   });
+  const [isVip, setIsVip] = useState(false);
   const router = useRouter();
 
   const logCurrentTime = () => new Date().toISOString();
@@ -70,6 +72,13 @@ export default function Thanhtoan() {
       
       const promoData = JSON.parse(localStorage.getItem("promo_data")) || null;
       setPromo(promoData);
+      
+      const token = localStorage.getItem("token");
+      if (token && Getiduser()) {
+        apiVipProgress().then(data => {
+            if (data) setIsVip(data.isVip || false);
+        }).catch(e => console.error(e));
+      }
     };
     fetchdata();
   }, []);
@@ -107,7 +116,8 @@ export default function Thanhtoan() {
     }));
     
     const promo = JSON.parse(localStorage.getItem("promo_data")) || { tien_giam: 0, ma_km: null };
-    const finalTotal = Math.max(0, tong - promo.tien_giam) + 30000;
+    const shippingFee = isVip ? 0 : 30000;
+    const finalTotal = Math.max(0, tong - promo.tien_giam) + shippingFee;
 
     return {
       iduser: Getiduser(),
@@ -151,7 +161,8 @@ export default function Thanhtoan() {
     setLoading(true);
     try {
       const promo = JSON.parse(localStorage.getItem("promo_data")) || { tien_giam: 0 };
-      const totalAmount = Math.max(0, tong - promo.tien_giam) + 30000;
+      const shippingFee = isVip ? 0 : 30000;
+      const totalAmount = Math.max(0, tong - promo.tien_giam) + shippingFee;
       const orderId = `KM${Date.now()}`;
       const orderInfo = `Thanh toan don hang kinh mat - ${form.tenkh}`;
 
@@ -380,13 +391,21 @@ export default function Thanhtoan() {
                 
                 <div className="flex justify-between items-center">
                   <span className="text-gray-500">Phí vận chuyển</span>
-                  <span className="font-semibold text-gray-900">{cart.length > 0 ? "30.000 đ" : "0 đ"}</span>
+                  {cart.length > 0 ? (
+                    isVip ? (
+                      <span className="font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded-full text-xs border border-green-100">Miễn phí (VIP)</span>
+                    ) : (
+                      <span className="font-semibold text-gray-900">30.000 đ</span>
+                    )
+                  ) : (
+                    <span className="font-semibold text-gray-900">0 đ</span>
+                  )}
                 </div>
                 <hr className="border-gray-100" />
                 <div className="flex justify-between items-end">
                   <span className="text-base font-bold text-gray-900">Tổng cộng</span>
                   <span className="text-xl font-extrabold text-[#c5a880] tracking-wide">
-                    {cart.length > 0 ? (Math.max(0, tong - (promo?.tien_giam || 0)) + 30000).toLocaleString("vi-VN") : "0"} đ
+                    {cart.length > 0 ? (Math.max(0, tong - (promo?.tien_giam || 0)) + (isVip ? 0 : 30000)).toLocaleString("vi-VN") : "0"} đ
                   </span>
                 </div>
               </div>

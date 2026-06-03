@@ -179,13 +179,21 @@ function InvoicePrint({ donhang, stateOrder, idorder, vanchuyen, onClose }) {
                 <span>Tạm tính</span>
                 <span className="font-semibold text-gray-700">{subtotal.toLocaleString('vi-VN')} đ</span>
               </div>
+              {donhang?.tien_giam > 0 && (
+                <div className="flex justify-between text-gray-500">
+                  <span>Giảm giá</span>
+                  <span className="font-semibold text-red-500">-{donhang.tien_giam.toLocaleString('vi-VN')} đ</span>
+                </div>
+              )}
               <div className="flex justify-between text-gray-500">
                 <span>Phí vận chuyển</span>
                 <span className="font-semibold text-gray-700">30.000 đ</span>
               </div>
               <div className="border-t-2 border-gray-200 pt-2 flex justify-between items-center">
                 <span className="font-black text-gray-900 text-base">TỔNG CỘNG</span>
-                <span className="font-black text-[#c5a880] text-xl">{total.toLocaleString('vi-VN')} đ</span>
+                <span className="font-black text-[#c5a880] text-xl">
+                  {(Math.max(0, subtotal - (donhang?.tien_giam || 0)) + shippingFee).toLocaleString('vi-VN')} đ
+                </span>
               </div>
               {donhang.ghichu && (
                 <div className="pt-2 border-t border-dashed border-gray-200">
@@ -397,9 +405,10 @@ export default function Order() {
         setdonviVC(dataVC.donvivanchuyen || "");
         setngaygiao(dataVC.ngaygiao ? dataVC.ngaygiao.split('T')[0] : "");
       } else {
-        setmavandon("");
-        setdonviVC("");
-        setngaygiao("");
+        const generatedMavandon = `VD${Math.random().toString(36).substring(2, 6).toUpperCase()}${Date.now().toString().slice(-4)}`;
+        setmavandon(generatedMavandon);
+        setdonviVC("GHTK");
+        setngaygiao(new Date().toISOString().split('T')[0]);
       }
     } catch (e) {
       console.error(e);
@@ -673,12 +682,22 @@ export default function Order() {
                   {/* Summary Pricing */}
                   <div className="space-y-2 text-xs font-semibold text-gray-500 pl-1">
                     <div className="flex justify-between">
+                      <span>Tạm tính (Giá gốc):</span>
+                      <span className="text-gray-600">{(parseChitiet(donhang).reduce((acc, item) => acc + (item.giaban || 0) * (item.soluong || 0), 0)).toLocaleString("vi-VN")} đ</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Giảm giá:</span>
+                      <span className="text-red-500">-{((donhang?.tien_giam || 0)).toLocaleString("vi-VN")} đ</span>
+                    </div>
+                    <div className="flex justify-between">
                       <span>Phí vận chuyển:</span>
                       <span className="text-gray-600">30.000 đ</span>
                     </div>
-                    <div className="flex justify-between items-end pt-1">
+                    <div className="flex justify-between items-end pt-2 mt-1 border-t border-gray-150">
                       <span className="text-sm font-bold text-gray-800">Tổng thanh toán:</span>
-                      <span className="text-base font-extrabold text-brand-gold">{((donhang?.tongtien) || 0).toLocaleString("vi-VN")} đ</span>
+                      <span className="text-base font-extrabold text-brand-gold">
+                        {(Math.max(0, parseChitiet(donhang).reduce((acc, item) => acc + (item.giaban || 0) * (item.soluong || 0), 0) - (donhang?.tien_giam || 0)) + 30000).toLocaleString("vi-VN")} đ
+                      </span>
                     </div>
                   </div>
 

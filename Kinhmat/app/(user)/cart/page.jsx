@@ -16,11 +16,14 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
+import { applyVoucher, getAvailableVouchers } from "../../../services/voucherService";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [reload, setReload] = useState(false);
   const [couponCode, setCouponCode] = useState("");
+  const [availableVouchers, setAvailableVouchers] = useState([]);
+  const [isVoucherListOpen, setIsVoucherListOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -55,7 +58,14 @@ export default function Cart() {
         setCartItems(stored);
       }
     };
+    
+    const fetchVouchers = async () => {
+      const vouchers = await getAvailableVouchers();
+      setAvailableVouchers(vouchers || []);
+    };
+    
     fetchCart();
+    fetchVouchers();
   }, [reload]);
 
   const updateQuantity = async (index, delta) => {
@@ -113,8 +123,8 @@ export default function Cart() {
     if (promo) setAppliedPromo(promo);
   }, []);
 
-  const applyCoupon = async () => {
-    if (!couponCode.trim()) {
+  const applyCoupon = async (codeToApply = couponCode.trim()) => {
+    if (!codeToApply) {
       toast.warn("Vui lòng nhập mã ưu đãi.");
       return;
     }
@@ -122,25 +132,24 @@ export default function Cart() {
     const tamTinhHienTai = cartItems.reduce((total, item) => total + item.tong, 0);
     
     try {
-        const { applyVoucher } = await import("../../../services/voucherService");
-        const res = await applyVoucher(couponCode.trim(), tamTinhHienTai);
+        const res = await applyVoucher(codeToApply, tamTinhHienTai);
         
         if (res.success) {
             const promo = res.data;
             let tienGiam = 0;
-            if (promo.phanTramGiam > 0) {
-                tienGiam = (tamTinhHienTai * promo.phanTramGiam) / 100;
-                if (tienGiam > promo.giamToiDa) tienGiam = promo.giamToiDa;
-            } else {
-                tienGiam = promo.giamToiDa;
+            if (promo.loai_km === 1) { // 1 là giảm theo %
+                tienGiam = (tamTinhHienTai * promo.giatri_km) / 100;
+            } else { // 2 là giảm số tiền cố định
+                tienGiam = promo.giatri_km;
             }
 
             const promoData = {
                 idVoucher: promo.id,
-                ma_km: promo.maVoucher,
+                ma_km: promo.ma_km,
                 tien_giam: tienGiam,
-                loai_km: promo.phanTramGiam > 0 ? 1 : 2,
-                giatri_km: promo.phanTramGiam > 0 ? promo.phanTramGiam : promo.giamToiDa
+                loai_km: promo.loai_km,
+                giatri_km: promo.giatri_km,
+                giam_toi_da: null // Khuyenmai system doesn't have max discount
             };
             
             localStorage.setItem("promo_data", JSON.stringify(promoData));
@@ -169,9 +178,16 @@ export default function Cart() {
       } else {
           tienGiamHienTai = appliedPromo.giatri_km;
       }
-      // re-save to reflect current cart subtotal if percent
-      const p = {...appliedPromo, tien_giam: tienGiamHienTai};
-      localStorage.setItem("promo_data", JSON.stringify(p));
+      
+      // Update if changed
+      if (appliedPromo.tien_giam !== tienGiamHienTai) {
+          const p = {...appliedPromo, tien_giam: tienGiamHienTai};
+          // Schedule localStorage update to avoid React warnings during render
+          setTimeout(() => {
+              localStorage.setItem("promo_data", JSON.stringify(p));
+              setAppliedPromo(p);
+          }, 0);
+      }
   }
 
   return (
@@ -381,20 +397,60 @@ export default function Cart() {
                       <button onClick={clearCoupon} className="text-red-500 text-xs font-bold hover:underline">Huỷ</button>
                     </div>
                   ) : (
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        className="flex-grow bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs font-medium outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold text-gray-800 placeholder-gray-400"
-                        placeholder="Mã giảm giá..."
-                        value={couponCode}
-                        onChange={(e) => setCouponCode(e.target.value)}
-                      />
-                      <button 
-                        onClick={applyCoupon}
-                        className="px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-brand-gold hover:text-black border border-transparent text-xs font-bold uppercase tracking-wider text-gray-700 transition duration-150 cursor-pointer"
-                      >
-                        Áp dụng
-                      </button>
+                    <div className="space-y-3 relative">
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          className="flex-grow bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-xs font-medium outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold text-gray-800 placeholder-gray-400"
+                          placeholder="Nhập hoặc chọn mã..."
+                          value={couponCode}
+                          onChange={(e) => setCouponCode(e.target.value)}
+                          onFocus={() => setIsVoucherListOpen(true)}
+                        />
+                        <button 
+                          onClick={() => applyCoupon()}
+                          className="px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-brand-gold hover:text-black border border-transparent text-xs font-bold uppercase tracking-wider text-gray-700 transition duration-150 cursor-pointer flex-shrink-0"
+                        >
+                          Áp dụng
+                        </button>
+                      </div>
+
+                      {/* Voucher List Dropdown */}
+                      {isVoucherListOpen && availableVouchers && availableVouchers.length > 0 && (
+                        <div className="absolute bottom-full left-0 right-0 mb-2 bg-white border border-gray-150 rounded-xl shadow-2xl z-[9999] max-h-64 overflow-y-auto">
+                          <div className="p-3 flex justify-between items-center sticky top-0 bg-white border-b border-gray-100 z-10">
+                            <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Mã khả dụng</span>
+                            <button onClick={() => setIsVoucherListOpen(false)} className="text-xs text-gray-400 hover:text-gray-700">Đóng</button>
+                          </div>
+                          <div className="p-2 space-y-2">
+                            {availableVouchers
+                              .filter(v => v.ma_km.toLowerCase().includes(couponCode.toLowerCase()))
+                              .map(v => (
+                              <div key={v.id} className="flex items-center justify-between p-3 rounded-lg border border-brand-gold/20 bg-brand-gold/5 hover:bg-brand-gold/10 transition-colors cursor-pointer group"
+                                onClick={() => {
+                                  setCouponCode(v.ma_km);
+                                  setIsVoucherListOpen(false);
+                                  applyCoupon(v.ma_km);
+                                }}
+                              >
+                                <div>
+                                  <div className="font-bold text-brand-gold text-sm">{v.ma_km}</div>
+                                  <div className="text-xs text-gray-500 mt-1">
+                                    {v.loai_km === 1 ? `Giảm ${v.giatri_km}%` : `Giảm ${v.giatri_km.toLocaleString("vi-VN")}đ`}
+                                  </div>
+                                  {v.dieukien_toithieu > 0 && <div className="text-[10px] text-gray-400 mt-0.5">Đơn tối thiểu {v.dieukien_toithieu.toLocaleString("vi-VN")}đ</div>}
+                                </div>
+                                <button className="text-xs font-bold text-brand-gold bg-white border border-brand-gold px-3 py-1.5 rounded-lg group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                                  Dùng ngay
+                                </button>
+                              </div>
+                            ))}
+                            {availableVouchers.filter(v => v.ma_km.toLowerCase().includes(couponCode.toLowerCase())).length === 0 && (
+                              <div className="text-center text-xs text-gray-400 py-4">Không tìm thấy mã phù hợp</div>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>

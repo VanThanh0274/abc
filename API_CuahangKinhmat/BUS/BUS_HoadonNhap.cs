@@ -14,6 +14,9 @@ namespace BUS
         public ModelHoadonNhap GetById(int mahdn) => db.GetById(mahdn);
         public List<ModelHoadonNhapChitiet> GetChitietById(int mahdn) => db.GetChitietById(mahdn);
         public int Create(HoadonNhap model) => db.Create(model);
+
+        public bool Update(HoadonNhap model) => db.Update(model);
+
         public bool AddChitiet(HoadonNhapChitiet chitiet) => db.AddChitiet(chitiet);
         public bool Confirm(int mahdn) => db.Confirm(mahdn);
     }
