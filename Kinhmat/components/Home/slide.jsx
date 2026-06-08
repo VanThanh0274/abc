@@ -31,7 +31,7 @@ export default function Slide() {
                 <Slider {...settings} className="custom-slider-center">
                     <div className="px-3 outline-none">
                         <div className="relative group overflow-hidden rounded-2xl shadow-xl transition-all duration-300 border border-white/5 bg-black/5 hover:shadow-brand-gold/10">
-                            <img 
+                            <img loading="lazy" 
                                 src="/images/img_trans.jpeg" 
                                 alt="Slide 1" 
                                 className="w-[300px] sm:w-[500px] md:w-[750px] lg:w-[950px] h-[180px] sm:h-[300px] md:h-[400px] lg:h-[480px] object-cover rounded-2xl transform group-hover:scale-[1.01] transition-transform duration-700" 
@@ -41,7 +41,7 @@ export default function Slide() {
                     </div>
                     <div className="px-3 outline-none">
                         <div className="relative group overflow-hidden rounded-2xl shadow-xl transition-all duration-300 border border-white/5 bg-black/5 hover:shadow-brand-gold/10">
-                            <img 
+                            <img loading="lazy" 
                                 src="/images/img_trans1.jpeg" 
                                 alt="Slide 2" 
                                 className="w-[300px] sm:w-[500px] md:w-[750px] lg:w-[950px] h-[180px] sm:h-[300px] md:h-[400px] lg:h-[480px] object-cover rounded-2xl transform group-hover:scale-[1.01] transition-transform duration-700" 
@@ -51,7 +51,7 @@ export default function Slide() {
                     </div>
                     <div className="px-3 outline-none">
                         <div className="relative group overflow-hidden rounded-2xl shadow-xl transition-all duration-300 border border-white/5 bg-black/5 hover:shadow-brand-gold/10">
-                            <img 
+                            <img loading="lazy" 
                                 src="/images/img_trans2.jpeg" 
                                 alt="Slide 3" 
                                 className="w-[300px] sm:w-[500px] md:w-[750px] lg:w-[950px] h-[180px] sm:h-[300px] md:h-[400px] lg:h-[480px] object-cover rounded-2xl transform group-hover:scale-[1.01] transition-transform duration-700" 

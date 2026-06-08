@@ -318,7 +318,7 @@ export default function Products() {
                                 <td className="p-4 sm:p-5 text-gray-400">{(tranghientai * 7) + index + 1}</td>
                                 <td className="p-4 sm:p-5">
                                     <div className="w-16 h-10 rounded-lg overflow-hidden bg-gray-50 border border-gray-200 flex items-center justify-center flex-shrink-0">
-                                        <img 
+                                        <img loading="lazy" 
                                             src={`http://localhost:5273/images/product/${item.anh || 'default.jpg'}`} 
                                             alt={item.ten} 
                                             className="h-8 w-auto object-contain p-0.5"
@@ -436,7 +436,7 @@ export default function Products() {
                                         
                                         {previewSrc ? (
                                             <div className="h-full w-full flex items-center justify-center">
-                                                <img src={previewSrc} alt="Preview" className="max-h-48 w-auto object-contain p-1 transform group-hover:scale-102 transition duration-300" />
+                                                <img loading="lazy" src={previewSrc} alt="Preview" className="max-h-48 w-auto object-contain p-1 transform group-hover:scale-102 transition duration-300" />
                                             </div>
                                         ) : (
                                             <div className="space-y-3 text-gray-400">

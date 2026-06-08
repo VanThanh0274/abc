@@ -14,14 +14,15 @@ function MomoInvoicePrint({ info, pendingOrder, onClose }) {
   const donhang = pendingOrder?.donhang || {};
   const items = donhang.listjson_chitiet || [];
   const subtotal = items.reduce((acc, i) => acc + i.giaban * i.soluong, 0);
-  const shippingFee = 30000;
-  const total = donhang.tongtien || subtotal + shippingFee;
+  const tienGiam = donhang.tien_giam || 0;
+  const total = donhang.tongtien || subtotal;
+  const shippingFee = total - Math.max(0, subtotal - tienGiam);
   const issueDate = donhang.thoigian ? new Date(donhang.thoigian) : new Date();
 
   return (
-    <div className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex items-start justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-start justify-center p-4 overflow-y-auto">
       {/* Control Bar */}
-      <div className="print:hidden fixed top-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
+      <div className="print:hidden fixed top-4 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-3">
         <motion.button
           onClick={() => window.print()}
           className="flex items-center gap-2 px-5 py-2.5 bg-[#a4135b] text-white font-bold text-xs rounded-xl shadow-lg hover:brightness-110 transition-all"
@@ -75,12 +76,12 @@ function MomoInvoicePrint({ info, pendingOrder, onClose }) {
         <div className="px-10 py-8 print:px-8 print:py-6 space-y-7">
           {/* MoMo Transaction Info */}
           <div className="bg-pink-50 border border-pink-200 rounded-2xl p-5">
-            <p className="text-[10px] font-black text-[#a4135b] uppercase tracking-widest mb-3 flex items-center gap-1.5">
+            <div className="text-[10px] font-black text-[#a4135b] uppercase tracking-widest mb-3 flex items-center gap-1.5">
               <div className="w-4 h-4 rounded-full bg-[#a4135b] flex items-center justify-center">
                 <span className="text-white text-[7px] font-black">M</span>
               </div>
               Thông tin giao dịch MoMo Sandbox
-            </p>
+            </div>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {info.orderId && (
                 <div>
@@ -163,9 +164,21 @@ function MomoInvoicePrint({ info, pendingOrder, onClose }) {
                     <span>Tạm tính</span>
                     <span className="font-semibold text-gray-700">{subtotal.toLocaleString("vi-VN")} đ</span>
                   </div>
+                  {tienGiam > 0 && (
+                    <div className="flex justify-between text-[#a4135b]">
+                      <span>Khuyến mãi</span>
+                      <span className="font-semibold">- {tienGiam.toLocaleString("vi-VN")} đ</span>
+                    </div>
+                  )}
                   <div className="flex justify-between text-gray-500">
                     <span>Phí vận chuyển</span>
-                    <span className="font-semibold text-gray-700">30.000 đ</span>
+                    <span className="font-semibold text-gray-700">
+                      {shippingFee <= 0 ? (
+                        <span className="text-emerald-500">Miễn phí (VIP)</span>
+                      ) : (
+                        `${shippingFee.toLocaleString("vi-VN")} đ`
+                      )}
+                    </span>
                   </div>
                   <div className="border-t-2 border-gray-200 pt-2 flex justify-between items-center">
                     <span className="font-black text-gray-900 text-base">TỔNG CỘNG</span>
@@ -228,7 +241,8 @@ function PaymentResultContent() {
           if (pendingRaw && !orderCreated) {
             const pending = JSON.parse(pendingRaw);
             await createOrder(JSON.stringify(pending.donhang));
-            localStorage.removeItem("momo_pending_order");
+            // Keep momo_pending_order for display purposes on refresh
+            // localStorage.removeItem("momo_pending_order");
             localStorage.removeItem("sanphams");
             window.dispatchEvent(new Event("localStorageUpdated"));
             setOrderCreated(true);
@@ -329,7 +343,7 @@ function PaymentResultContent() {
           </div>
 
           {/* Transaction info */}
-          {info.transId && info.transId !== "0" && (
+          {((info.transId && info.transId !== "0") || pendingOrder) && (
             <div className="bg-white/70 rounded-2xl p-4 text-left space-y-2 text-sm border border-white">
               {info.orderId && (
                 <div className="flex justify-between">
@@ -343,10 +357,44 @@ function PaymentResultContent() {
                   <span className="font-bold text-gray-800 text-xs font-mono">{info.transId}</span>
                 </div>
               )}
+
+              {pendingOrder && pendingOrder.donhang && (
+                <>
+                  <div className="border-t border-gray-100 my-2 pt-2 space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-gray-500 font-medium">Tạm tính</span>
+                      <span className="font-bold text-gray-800">
+                        {pendingOrder.donhang.listjson_chitiet.reduce((acc, i) => acc + i.giaban * i.soluong, 0).toLocaleString("vi-VN")} đ
+                      </span>
+                    </div>
+                    {(pendingOrder.donhang.tien_giam || 0) > 0 && (
+                      <div className="flex justify-between">
+                        <span className="text-[#a4135b] font-medium">Khuyến mãi</span>
+                        <span className="font-bold text-[#a4135b]">
+                          - {(pendingOrder.donhang.tien_giam).toLocaleString("vi-VN")} đ
+                        </span>
+                      </div>
+                    )}
+                    <div className="flex justify-between">
+                      <span className="text-gray-500 font-medium">Phí vận chuyển</span>
+                      <span className="font-bold text-gray-800">
+                        {(() => {
+                           const sub = pendingOrder.donhang.listjson_chitiet.reduce((acc, i) => acc + i.giaban * i.soluong, 0);
+                           const tg = pendingOrder.donhang.tien_giam || 0;
+                           const tot = pendingOrder.donhang.tongtien || sub;
+                           const ship = tot - Math.max(0, sub - tg);
+                           return ship <= 0 ? <span className="text-emerald-500">Miễn phí (VIP)</span> : `${ship.toLocaleString("vi-VN")} đ`;
+                        })()}
+                      </span>
+                    </div>
+                  </div>
+                </>
+              )}
+
               {info.amount && (
-                <div className="flex justify-between">
-                  <span className="text-gray-500 font-medium">Số tiền</span>
-                  <span className="font-bold text-[#a4135b]">{parseInt(info.amount).toLocaleString("vi-VN")} đ</span>
+                <div className="flex justify-between border-t border-gray-200 pt-3 mt-2">
+                  <span className="text-gray-800 font-bold">Tổng thanh toán</span>
+                  <span className="font-black text-[#a4135b] text-base">{parseInt(info.amount).toLocaleString("vi-VN")} đ</span>
                 </div>
               )}
             </div>

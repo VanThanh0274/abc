@@ -611,7 +611,7 @@ export default function ImportPage() {
                           <td className="px-4 py-3">
                             <div className="w-12 h-8 rounded bg-white border border-gray-200 flex items-center justify-center">
                               {det.anh ? (
-                                <img src={`http://localhost:5273/images/product/${det.anh}`} alt="" className="h-6 w-auto object-contain" />
+                                <img loading="lazy" src={`http://localhost:5273/images/product/${det.anh}`} alt="" className="h-6 w-auto object-contain" />
                               ) : (
                                 <span className="text-[8px] text-gray-400 font-black">NO IMG</span>
                               )}

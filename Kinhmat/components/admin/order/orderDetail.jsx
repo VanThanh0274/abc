@@ -38,7 +38,7 @@ export default function OrderDetailModal({ isOpen, onClose }) {
                 <tr key={item.id}>
                   <td>{index + 1}</td>
                   <td>
-                    <img src={item.image} alt="" className={styles.productImg} />
+                    <img loading="lazy" src={item.image} alt="" className={styles.productImg} />
                   </td>
                   <td>{item.name}</td>
                   <td>{item.quantity}</td>

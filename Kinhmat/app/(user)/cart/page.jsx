@@ -275,7 +275,7 @@ export default function Cart() {
                         
                         {/* Image */}
                         <div className="w-20 h-20 bg-gray-50 rounded-xl overflow-hidden border border-gray-150 flex items-center justify-center flex-shrink-0 group-hover:shadow-md transition duration-200">
-                          <img
+                          <img loading="lazy"
                             className="w-full h-full object-contain p-1 transform group-hover:scale-105 transition duration-300"
                             src={`http://localhost:5273/images/product/${item.anh || 'default.jpg'}`}
                             alt={item.ten}

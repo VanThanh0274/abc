@@ -615,7 +615,7 @@ export default function Order() {
                             <td className="py-3 text-gray-400">{idx + 1}</td>
                             <td className="py-3">
                               <div className="w-12 h-8 rounded bg-white border border-gray-200 flex items-center justify-center">
-                                <img src={`http://localhost:5273/images/product/${item.anh}`} alt="" className="h-6 w-auto object-contain" />
+                                <img loading="lazy" src={`http://localhost:5273/images/product/${item.anh}`} alt="" className="h-6 w-auto object-contain" />
                               </div>
                             </td>
                             <td className="py-3 text-brand-dark font-semibold truncate max-w-[120px]">{item.ten}</td>

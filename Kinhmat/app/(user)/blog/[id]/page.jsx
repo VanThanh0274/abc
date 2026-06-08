@@ -82,7 +82,7 @@ export default function BlogDetailPage() {
       <div className="relative w-full h-[50vh] md:h-[60vh] bg-brand-dark overflow-hidden">
         {blog.anh && (
           <div className="absolute inset-0">
-            <img src={blog.anh} alt={blog.tieude} className="w-full h-full object-cover opacity-40" />
+            <img loading="lazy" src={blog.anh} alt={blog.tieude} className="w-full h-full object-cover opacity-40" />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
           </div>
         )}

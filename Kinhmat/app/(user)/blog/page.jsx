@@ -138,7 +138,7 @@ export default function BlogListPage() {
                       <Link href={`/blog/${blog.id}`} className="group block h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col relative top-0 hover:-top-2">
                         <div className="aspect-[4/3] overflow-hidden relative bg-gray-100">
                           {blog.anh ? (
-                            <img 
+                            <img loading="lazy" 
                               src={blog.anh} 
                               alt={blog.tieude} 
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

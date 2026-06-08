@@ -87,7 +87,7 @@ export default function ProductSlide({ gioithieu }) {
                                 >
                                     {/* Image Wrapper */}
                                     <div className="h-44 w-full bg-gray-50 dark:bg-white/[0.02] flex items-center justify-center rounded-xl overflow-hidden relative border border-gray-100/50 dark:border-white/5">
-                                        <img 
+                                        <img loading="lazy" 
                                             src={`${imgURLlocal()}${products.anh}`} 
                                             alt={products.ten} 
                                             className="h-32 w-auto object-contain transform group-hover:scale-105 transition-transform duration-500 p-2" 

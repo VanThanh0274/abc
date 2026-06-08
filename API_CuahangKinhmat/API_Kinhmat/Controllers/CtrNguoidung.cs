@@ -37,7 +37,7 @@ namespace API_Kinhmat.Controllers
         [Route("create")]
         public IActionResult create([FromBody] Nguoidung user)
         {
-            user.pass = BCrypt.Net.BCrypt.HashPassword(user.pass);
+            // user.pass = BCrypt.Net.BCrypt.HashPassword(user.pass);
             user.role = "2"; // Default to customer
             if (bus.Insert(user))
             {
@@ -72,7 +72,8 @@ namespace API_Kinhmat.Controllers
         [Route("Changepassword")]
         public IActionResult Changepass(string password, int id)
         {
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            // string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            string hashedPassword = password;
             var kt = bus.ChangePassword(hashedPassword,id);
             if (kt)
             {
@@ -167,7 +168,8 @@ namespace API_Kinhmat.Controllers
 
             // Tạo mật khẩu mới ngẫu nhiên (6 ký tự)
             string newPassword = GenerateRandomPassword(6);
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            // string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPassword);
+            string hashedPassword = newPassword;
 
             // Cập nhật vào DB
             bool changed = bus.ChangePassword(hashedPassword, user.id);

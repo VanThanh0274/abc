@@ -61,7 +61,7 @@ export default function Footer() {
           {/* Column 1: About & Contact */}
           <div className="space-y-6">
             <div>
-              <img src="/images/logo3.png" alt="Luxury Optic" className="h-12 w-auto mb-6 brightness-0 invert opacity-90" />
+              <img loading="lazy" src="/images/logo3.png" alt="Luxury Optic" className="h-12 w-auto mb-6 brightness-0 invert opacity-90" />
               <p className="text-sm text-gray-400 leading-relaxed">
                 Thương hiệu kính mắt cao cấp hàng đầu, mang đến cho bạn trải nghiệm hoàn hảo về thị lực và phong cách sống đẳng cấp.
               </p>

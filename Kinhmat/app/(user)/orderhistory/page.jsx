@@ -15,7 +15,7 @@ function History() {
             </div>
             <div className={styles.productDetail}>
                 <div className={styles.productInfo}>
-                    <img src="/images/product0.jpg" alt="M20D Helmet" className={styles.productImage} />
+                    <img loading="lazy" src="/images/product0.jpg" alt="M20D Helmet" className={styles.productImage} />
                     <div className={styles.textInfo}>
                         <span className={styles.productName}>M20D</span>
                         <span className={styles.productCategory}>Phân loại: Vàng, L</span>
@@ -69,7 +69,7 @@ export default function Order_history() {
                             {(list.listjson_chitiet || []).map((item, idx) => (
                                 <div key={item.id || item.masp || idx} className={styles.productDetail}>
                                     <div className={styles.productInfo}>
-                                        <img src={`${imgURLlocal()}${item.anh}`} alt="M20D Helmet" className={styles.productImage} />
+                                        <img loading="lazy" src={`${imgURLlocal()}${item.anh}`} alt="M20D Helmet" className={styles.productImage} />
                                         <div className={styles.textInfo}>
                                             <span className={styles.productName}>{(item.ten)}</span>
                                             {/* <span className={styles.productCategory}>Phân loại: Vàng, L</span> */}
@@ -151,7 +151,7 @@ export default function Order_history() {
                             <ul style={{listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px'}}>
                                 {(selectedOrder.listjson_chitiet || []).map((item, idx) => (
                                     <li key={idx} style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
-                                        <img src={`${imgURLlocal()}${item.anh}`} alt="" style={{width: '50px', height: '50px', objectFit: 'contain', border: '1px solid #eee', borderRadius: '5px'}} />
+                                        <img loading="lazy" src={`${imgURLlocal()}${item.anh}`} alt="" style={{width: '50px', height: '50px', objectFit: 'contain', border: '1px solid #eee', borderRadius: '5px'}} />
                                         <div style={{flex: 1}}>
                                             <p style={{margin: 0, fontWeight: 'bold'}}>{item.ten}</p>
                                             <p style={{margin: 0, fontSize: '12px', color: '#666'}}>SL: {item.soluong} x {Number(item.giaban).toLocaleString('vi-VN')} đ</p>

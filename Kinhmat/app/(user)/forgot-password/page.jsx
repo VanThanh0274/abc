@@ -56,7 +56,7 @@ export default function ForgotPasswordPage() {
             {/* Left Side - Image Banner */}
             <div className="hidden lg:flex w-1/2 relative bg-gray-900 items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/50 z-10"></div>
-                <img
+                <img loading="lazy"
                     src="/images/sale.jpg"
                     alt="Luxury Eyewear"
                     className="absolute inset-0 w-full h-full object-cover object-center scale-105"

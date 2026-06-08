@@ -110,7 +110,7 @@ export default function Listproduct() {
 
                 {/* Product Image */}
                 <div className="h-48 w-full bg-gray-50/50 flex items-center justify-center rounded-xl overflow-hidden relative border border-gray-150 flex-shrink-0">
-                  <img
+                  <img loading="lazy"
                     src={`http://localhost:5273/images/product/${sp.anh || 'default.jpg'}`}
                     alt={sp.ten}
                     className="h-36 w-auto object-contain transform group-hover:scale-103 transition duration-500 p-2"

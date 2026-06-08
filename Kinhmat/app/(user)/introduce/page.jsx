@@ -101,7 +101,7 @@ export default function GioiThieu() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6 }}
                             >
-                                <img src="/images/intro/gioithieu3.jpg" alt="Italian Design" className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]" onError={(e) => { e.target.onerror = null; e.target.src = '/images/sale.jpg'; }} />
+                                <img loading="lazy" src="/images/intro/gioithieu3.jpg" alt="Italian Design" className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]" onError={(e) => { e.target.onerror = null; e.target.src = '/images/sale.jpg'; }} />
                             </motion.div>
                             <motion.div 
                                 className="space-y-4"
@@ -110,7 +110,7 @@ export default function GioiThieu() {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
                             >
-                                <img src="/images/intro/gioithieu4.jpg" alt="Craftsmanship" className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]" onError={(e) => { e.target.onerror = null; e.target.src = '/images/sale.jpg'; }} />
+                                <img loading="lazy" src="/images/intro/gioithieu4.jpg" alt="Craftsmanship" className="rounded-2xl shadow-xl w-full h-auto object-cover aspect-[4/5]" onError={(e) => { e.target.onerror = null; e.target.src = '/images/sale.jpg'; }} />
                             </motion.div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@ export default function GioiThieu() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <motion.div className="md:col-span-2 rounded-3xl overflow-hidden shadow-2xl" variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                            <img src="/images/intro/gioithieu6.png" alt="Global Stores" className="w-full h-full object-cover min-h-[400px]" onError={(e) => { e.target.onerror = null; e.target.src = '/images/sale.jpg'; }} />
+                            <img loading="lazy" src="/images/intro/gioithieu6.png" alt="Global Stores" className="w-full h-full object-cover min-h-[400px]" onError={(e) => { e.target.onerror = null; e.target.src = '/images/sale.jpg'; }} />
                         </motion.div>
                         <motion.div className="bg-gray-900 rounded-3xl p-8 flex flex-col justify-center text-white shadow-2xl relative overflow-hidden" variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ delay: 0.2 }}>
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/20 blur-3xl rounded-full"></div>

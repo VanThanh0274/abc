@@ -57,7 +57,7 @@ export default function Sidebar() {
       <div className="space-y-8">
         {/* Branding Logo */}
         <Link href="/Home" className="block text-center focus:outline-none">
-          <img src="/images/logo3.png" alt="Luxury Logo" className="w-[180px] mx-auto block hover:opacity-80 transition duration-150" />
+          <img loading="lazy" src="/images/logo3.png" alt="Luxury Logo" className="w-[180px] mx-auto block hover:opacity-80 transition duration-150" />
           <span className="text-[9px] font-bold tracking-widest text-brand-gold uppercase block mt-2">ADMINISTRATION CONTROL</span>
         </Link>
 

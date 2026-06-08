@@ -25,11 +25,11 @@ namespace DAL
         public ResponseData<List<modelKinhmat>> Getall(int page_number, int page_size)
         {
             string msg = "";
-            var dx= db.Listobject(out msg, "sp_kinhmat_select_all");
+            int totalCount = int.Parse(db.GetString("SELECT COUNT(*) FROM Kinhmat k INNER JOIN Danhmuc d ON d.id = k.madanhmuc"));
             var dt = db.Listobject(out msg, "sp_demopageGetALl_SanPham",
                 "@page_number",page_number,
                 "@page_size",page_size);
-            double cx = Math.Ceiling((double)dx.Rows.Count / page_size);
+            double cx = Math.Ceiling((double)totalCount / page_size);
             ResponseData<List<modelKinhmat>> a = new ResponseData<List<modelKinhmat>>(
                 page_number, page_size, Math.Ceiling(cx),
                 dt.ConvertTo<modelKinhmat>().ToList()

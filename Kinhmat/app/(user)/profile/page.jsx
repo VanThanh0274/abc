@@ -92,7 +92,7 @@ export default function Profile() {
                     {/* Phần avatar */}
                     <div className={styles.avatarContainer}>
                         <div className={styles.avatarPlaceholder}>
-                            <img src="/images/intro/avatar_trang_1_cd729c335b.jpg" alt="" />
+                            <img loading="lazy" src="/images/intro/avatar_trang_1_cd729c335b.jpg" alt="" />
                         </div>
                         <p className={styles.usernameDisplay} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                             {username} 

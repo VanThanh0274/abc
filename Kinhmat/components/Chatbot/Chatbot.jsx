@@ -278,7 +278,7 @@ export default function Chatbot() {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.1 + pIdx * 0.05 }}
                               >
-                                <img 
+                                <img loading="lazy" 
                                   src={`http://localhost:5273/images/product/${prod.anh || 'default.jpg'}`} 
                                   alt={prod.ten} 
                                   className="chatbot-prod-img rounded-lg shadow-sm"

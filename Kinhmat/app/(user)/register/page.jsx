@@ -69,12 +69,14 @@ export default function RegisterPage() {
         setIsLoading(true);
         try {
             const userPayload = {
+                id: 0,
                 username: formData.username.trim(),
                 ten: formData.fullname.trim(),
                 email: formData.email.trim(),
                 sdt: formData.phone.trim(),
                 pass: formData.password,
                 role: "user",
+                token: "",
                 trangthai: 1,
                 is_vip: 0
             };
@@ -278,7 +280,7 @@ export default function RegisterPage() {
             {/* Right Side - Image Banner */}
             <div className="hidden lg:flex w-1/2 relative bg-gray-900 items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-black/40 z-10"></div>
-                <img 
+                <img loading="lazy" 
                     src="/images/sale.jpg" 
                     alt="Luxury Eyewear Collection" 
                     className="absolute inset-0 w-full h-full object-cover object-center scale-105"

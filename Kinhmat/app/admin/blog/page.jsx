@@ -261,7 +261,7 @@ export default function BlogManagementPage() {
                   >
                     <td className="p-4">
                       {blog.anh ? (
-                        <img src={blog.anh} alt={blog.tieude} className="w-16 h-12 object-cover rounded-lg border border-gray-200" />
+                        <img loading="lazy" src={blog.anh} alt={blog.tieude} className="w-16 h-12 object-cover rounded-lg border border-gray-200" />
                       ) : (
                         <div className="w-16 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 border border-gray-200">
                           <ImageIcon size={20} />
@@ -407,7 +407,7 @@ export default function BlogManagementPage() {
                         onClick={() => fileInputRef.current?.click()}
                       >
                         {formData.anh ? (
-                          <img src={formData.anh} alt="Preview" className="w-full h-full object-cover" />
+                          <img loading="lazy" src={formData.anh} alt="Preview" className="w-full h-full object-cover" />
                         ) : (
                           <>
                             <ImageIcon className="text-gray-400 mb-2" size={32} />

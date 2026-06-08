@@ -15,7 +15,7 @@ export default function SalePage() {
       {/* Hero Banner */}
       <div className="relative w-full h-[400px] overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <img 
+        <img loading="lazy" 
             src="/images/sale.jpg" 
             alt="Sale Banner" 
             className="absolute inset-0 w-full h-full object-cover object-center"
@@ -127,7 +127,7 @@ export default function SalePage() {
 
                 {/* Banner Ad */}
                 <div className="rounded-3xl overflow-hidden shadow-xl group relative cursor-pointer">
-                    <img src="/images/sale.jpg" alt="Promo" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img loading="lazy" src="/images/sale.jpg" alt="Promo" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                         <div className="text-white">
                             <p className="font-bold text-lg">Giảm thêm 10%</p>

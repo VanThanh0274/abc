@@ -16,11 +16,11 @@ export default function Homecenter() {
             {/* 1. Brands Logo Bar */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-60 dark:opacity-40">
-                    <img src="/images/brand1.png" alt="Brand 1" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
-                    <img src="/images/brand2.jpg" alt="Brand 2" className="h-10 md:h-12 w-auto object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
-                    <img src="/images/brand3.jpg" alt="Brand 3" className="h-10 md:h-12 w-auto object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
-                    <img src="/images/brand4.png" alt="Brand 4" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
-                    <img src="/images/brand5.jpeg" alt="Brand 5" className="h-10 md:h-12 w-auto object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
+                    <img loading="lazy" src="/images/brand1.png" alt="Brand 1" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
+                    <img loading="lazy" src="/images/brand2.jpg" alt="Brand 2" className="h-10 md:h-12 w-auto object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
+                    <img loading="lazy" src="/images/brand3.jpg" alt="Brand 3" className="h-10 md:h-12 w-auto object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
+                    <img loading="lazy" src="/images/brand4.png" alt="Brand 4" className="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
+                    <img loading="lazy" src="/images/brand5.jpeg" alt="Brand 5" className="h-10 md:h-12 w-auto object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
             </div>
 
@@ -73,7 +73,7 @@ export default function Homecenter() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="relative group overflow-hidden rounded-2xl shadow-xl border border-gray-200 dark:border-white/5 max-w-sm w-full bg-white dark:bg-black/20">
-                            <img 
+                            <img loading="lazy" 
                                 src="/images/intro.png" 
                                 alt="Giới thiệu DESMON" 
                                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 rounded-2xl" 
@@ -94,7 +94,7 @@ export default function Homecenter() {
                         whileHover={{ y: -4, shadow: "0 20px 25px -5px rgba(197,168,128,0.08)" }}
                     >
                         <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mx-auto mb-2">
-                            <img src="/images/col1.png" alt="Mẫu mã đa dạng" className="h-8 w-8 object-contain" />
+                            <img loading="lazy" src="/images/col1.png" alt="Mẫu mã đa dạng" className="h-8 w-8 object-contain" />
                         </div>
                         <h4 className="text-lg font-bold font-heading text-brand-gold tracking-wide">MẪU MÃ ĐA DẠNG</h4>
                         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
@@ -108,7 +108,7 @@ export default function Homecenter() {
                         whileHover={{ y: -4, shadow: "0 20px 25px -5px rgba(197,168,128,0.08)" }}
                     >
                         <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mx-auto mb-2">
-                            <img src="/images/col-2.png" alt="Chất lượng đi đầu" className="h-8 w-8 object-contain" />
+                            <img loading="lazy" src="/images/col-2.png" alt="Chất lượng đi đầu" className="h-8 w-8 object-contain" />
                         </div>
                         <h4 className="text-lg font-bold font-heading text-brand-gold tracking-wide">CHẤT LƯỢNG ĐI ĐẦU</h4>
                         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
@@ -122,7 +122,7 @@ export default function Homecenter() {
                         whileHover={{ y: -4, shadow: "0 20px 25px -5px rgba(197,168,128,0.08)" }}
                     >
                         <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mx-auto mb-2">
-                            <img src="/images/col-3.png" alt="Giá cả hợp lý" className="h-8 w-8 object-contain" />
+                            <img loading="lazy" src="/images/col-3.png" alt="Giá cả hợp lý" className="h-8 w-8 object-contain" />
                         </div>
                         <h4 className="text-lg font-bold font-heading text-brand-gold tracking-wide">GIÁ CẢ HỢP LÝ</h4>
                         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
@@ -144,7 +144,7 @@ export default function Homecenter() {
                 >
                     {/* Left: Illustration Image */}
                     <div className="lg:col-span-6 relative overflow-hidden rounded-2xl shadow-lg border border-gray-250/20 max-w-md mx-auto w-full group">
-                        <img 
+                        <img loading="lazy" 
                             src="/images/dki-1024x514.jpg" 
                             alt="Khám mắt định kỳ" 
                             className="w-full h-auto object-cover transform group-hover:scale-102 transition duration-500 rounded-2xl" 
@@ -216,11 +216,11 @@ export default function Homecenter() {
                 <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
                     <p className="text-[10px] font-bold tracking-widest text-brand-gold uppercase">Đối tác hàng đầu</p>
                     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-50 dark:opacity-30">
-                        <img src="/images/doitac5.png" alt="Partner 5" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300" />
-                        <img src="/images/doitac4.png" alt="Partner 4" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300" />
-                        <img src="/images/doitac1.png" alt="Partner 1" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300" />
-                        <img src="/images/doitac2.jpg" alt="Partner 2" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 rounded-md" />
-                        <img src="/images/doitac3.jpg" alt="Partner 3" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 rounded-md" />
+                        <img loading="lazy" src="/images/doitac5.png" alt="Partner 5" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300" />
+                        <img loading="lazy" src="/images/doitac4.png" alt="Partner 4" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300" />
+                        <img loading="lazy" src="/images/doitac1.png" alt="Partner 1" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300" />
+                        <img loading="lazy" src="/images/doitac2.jpg" alt="Partner 2" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 rounded-md" />
+                        <img loading="lazy" src="/images/doitac3.jpg" alt="Partner 3" className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 rounded-md" />
                     </div>
                 </div>
             </div>

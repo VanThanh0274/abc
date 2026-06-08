@@ -42,7 +42,7 @@ export default function ProductRelated({ productId }) {
             >
               <Link href={`/products?id=${item.id}`} className="flex-grow flex flex-col">
                 <div className="relative h-48 w-full flex items-center justify-center bg-gray-50 dark:bg-white/[0.02] rounded-xl overflow-hidden mb-4">
-                  <img 
+                  <img loading="lazy" 
                     src={`http://localhost:5273/images/product/${item.anh || 'default.jpg'}`}
                     alt={item.ten}
                     className="max-h-full w-auto object-contain transform group-hover:scale-105 transition duration-500"
